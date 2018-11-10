@@ -13,6 +13,8 @@
 	d 	= diff
 	l 	= log
 	p    	= push
+	po   	= push origin
+  	pom 	= push origin master
 	pl	= pull
 	rb 	= rebase
 	rbm	= rebase master
