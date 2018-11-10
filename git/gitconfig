@@ -1,3 +1,20 @@
 [user]
 	name=Steven Yang
 	email=stv.yang10@gmail.com
+
+[alias]
+	a	= add
+	b 	= branch
+	cl	= clone
+	cm 	= commit -m
+	ca 	= commit -am
+	co 	= checkout
+	cob 	= checkout -b
+	d 	= diff
+	l 	= log
+	p    	= push
+	pl	= pull
+	rb 	= rebase
+	rbm	= rebase master
+	s 	= status
+	st	= stash
