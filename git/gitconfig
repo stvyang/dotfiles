@@ -1,6 +1,6 @@
 [user]
-	name=Steven Yang
-	email=stv.yang10@gmail.com
+	name	= Steven Yang
+	email	= stv.yang10@gmail.com
 
 [alias]
 	a	= add
