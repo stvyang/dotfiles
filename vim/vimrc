@@ -1,0 +1,18 @@
+" Left
+noremap j h
+" Up
+noremap i k
+" Down
+noremap k j
+
+" Insert mode
+nnoremap h i
+
+" Beginning of line
+noremap L $
+" End of line
+noremap H ^
+
+" Save file 
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>a
