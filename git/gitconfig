@@ -1,25 +1,25 @@
 [user]
-	name	= Steven Yang
-	email	= stv.yang10@gmail.com
+  name  = Steven Yang
+  email = stv.yang10@gmail.com
 
 [alias]
-	a	= add
-	b 	= branch
-	cl	= clone
-	cm 	= commit -m
-	ca 	= !git add -A && git commit -m
-	co 	= checkout
-	cob 	= checkout -b
-	com	= checkout master
-	d 	= diff
-	l 	= log
-	p    	= push
-	po   	= push origin
-  	pom 	= push origin master
-	pl	= pull
-	plo	= pull origin
-	plom	= pull origin master
-	rb 	= rebase
-	rbm	= rebase master
-	s 	= status
-	st	= stash
+  a     = add
+  b     = branch
+  cl    = clone
+  cm    = commit -m
+  ca    = !git add -A && git commit -m
+  co    = checkout
+  cob   = checkout -b
+  com   = checkout master
+  d     = diff
+  l     = log
+  p     = push
+  po    = push origin
+  pom   = push origin master
+  pl    = pull
+  plo   = pull origin
+  plom  = pull origin master
+  rb    = rebase
+  rbm   = rebase master
+  s     = status
+  st    = stash
