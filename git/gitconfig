@@ -23,3 +23,4 @@
   rbm   = rebase master
   s     = status
   st    = stash
+  pop   = stash pop
