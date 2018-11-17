@@ -1,24 +1,16 @@
-" Set tab to 2 spaces
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+" Wraps paths to make them relative to this directory.
+function! Dot(path)
+  return '~/.vim/config/' . a:path
+endfunction
 
-" Left
-noremap j h
-" Up
-noremap i k
-" Down
-noremap k j
+let configs = [
+  \'general.vim',
+  \'mappings.vim',
+  \'plugins.vim'
+\]
 
-" Insert mode
-nnoremap h i
+" Load all configuration modules.
+for file in configs
+  execute 'source' Dot(file)
+endfor
 
-" Beginning of line
-noremap L $
-" End of line
-noremap H ^
-
-" Save file 
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <ESC>:w<CR>a
