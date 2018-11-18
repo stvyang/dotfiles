@@ -32,15 +32,12 @@ call plug#end()
 " set background=dark
 
 " colorscheme onedark
-" let g:onedark_termcolors=16
 
 " colorscheme onehalfdark
 " let g:airline_theme='onehalfdark'
-" lightline
-" let g:lightline.colorscheme='onehalfdark'
 
 colorscheme snazzy
-let g:airline_theme = 'base16_eighties'
+let g:airline_theme = 'molokai'
 
 " Airline 
 " ----------------------
@@ -53,7 +50,6 @@ let g:NERDSpaceDelims=1
 
 " FZF
 " ----------------------
-
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'         " Remove gitignore files and dirs on fzf
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
