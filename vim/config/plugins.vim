@@ -5,15 +5,18 @@ call plug#begin('~/.vim/plugged')
 " Basics
 " ----------------------
 Plug 'vim-airline/vim-airline'                " Beautiful status bars
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'                    " Display directory tree
+Plug 'scrooloose/nerdcommenter'               " Commenter
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file finder 
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
 
 " Colorschemes 
 " ----------------------
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'connorholyday/vim-snazzy'
 Plug 'jacoborus/tender.vim'
 
 call plug#end()
@@ -23,18 +26,35 @@ call plug#end()
 
 " Colorscheme
 " ----------------------
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'soft'
-set background=dark
+
+" colorscheme gruvbox
+" let g:gruvbox_contrast_dark = 'medium'
+" set background=dark
+
+" colorscheme onedark
+" let g:onedark_termcolors=16
+
+" colorscheme onehalfdark
+" let g:airline_theme='onehalfdark'
+" lightline
+" let g:lightline.colorscheme='onehalfdark'
+
+colorscheme snazzy
+let g:airline_theme = 'base16_eighties'
+
+" Airline 
+" ----------------------
+let g:airline#extensions#tabline#enabled = 1
 
 " NERDTree
 " ----------------------
 let g:NERDTreeMapOpenSplit='h'                " Allow i to UP key like mappings
+let g:NERDSpaceDelims=1 
 
 " FZF
 " ----------------------
 
-" Customize fzf colors to match your color scheme
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'         " Remove gitignore files and dirs on fzf
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -48,5 +68,5 @@ let g:fzf_colors =
   \ 'pointer': ['fg', 'Exception'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+  \ 'header':  ['fg', 'Comment'] }            " Customize fzf colors to match your color scheme
 
