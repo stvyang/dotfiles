@@ -45,6 +45,10 @@ nnoremap <leader><space> :nohlsearch<CR>
 " Toggle NERDTree
 map <silent> <C-n> :NERDTreeToggle<CR>
 
+" Toggle Commenter
+nmap <C-_> <leader>c<Space>
+vmap <C-_> <leader>c<Space>
+
 " Find file
 nnoremap <silent> <C-p> :FZF<CR>
 

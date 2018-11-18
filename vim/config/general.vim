@@ -9,5 +9,7 @@ set cursorline          " highlight current line
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set showmatch           " highlight matching [{()}]
+set t_Co=256            " enable 256 colors on vim
 
 syntax enable           " enable syntax processing
+
