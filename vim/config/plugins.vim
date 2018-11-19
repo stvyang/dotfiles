@@ -45,7 +45,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " NERDTree
 " ----------------------
-let g:NERDTreeMapOpenSplit='h'                " Allow i to UP key like mappings
 let g:NERDSpaceDelims=1 
 
 " FZF

@@ -4,9 +4,10 @@ function! Dot(path)
 endfunction
 
 let configs = [
+  \'plugins.vim',
   \'general.vim',
   \'mappings.vim',
-  \'plugins.vim'
+  \'colors.vim'
 \]
 
 " Load all configuration modules.

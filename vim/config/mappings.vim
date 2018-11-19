@@ -1,19 +1,9 @@
 " leader is comma
 let mapleader=","
 
-" Left, Up, Down
-noremap j h
-noremap i k
-noremap k j
-
-" Insert mode
-nnoremap h i
-nnoremap H I
-noremap I J
-
 " Move to beginning/end of line
+noremap H ^
 noremap L $
-noremap J ^
 
 " $/^ doesn't do anything
 nnoremap $ <nop>
@@ -51,4 +41,3 @@ vmap <C-_> <leader>c<Space>
 
 " Find file
 nnoremap <silent> <C-p> :FZF<CR>
-
