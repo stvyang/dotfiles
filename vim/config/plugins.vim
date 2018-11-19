@@ -37,7 +37,7 @@ call plug#end()
 " let g:airline_theme='onehalfdark'
 
 colorscheme snazzy
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'wombat'
 
 " Airline 
 " ----------------------
