@@ -3,7 +3,7 @@ ln_flags="-sTf"
 
 # Zsh
 echo "Creating symlinks for zsh configuration"
-ln "$ln_flags" "$ROOT/zsh" "$HOME/.zsh"
+ln "$ln_flags" "$ROOT/zsh/config" "$HOME/.zsh"
 ln "$ln_flags" "$ROOT/zsh/zshrc" "$HOME/.zshrc"
 
 # Git
