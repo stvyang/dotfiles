@@ -11,8 +11,8 @@ nnoremap ^ <nop>
 
 " Insert new line below/above without insert mode
 " Used for paste yanked words
-nnoremap <silent><C-k> o<Esc>
-nnoremap <silent><C-i> O<Esc>
+nnoremap <silent><C-j> o<Esc>
+nnoremap <silent><C-k> O<Esc>
 
 " Ctrl+c = copy | Ctrl+v = paste
 " Only works in visual and insert mode to avoid conflict to visual-block key
