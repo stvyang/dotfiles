@@ -7,7 +7,7 @@ promptinit
 prompt lambda-pure
 
 # This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && emulate sh -c 'source "$NVM_DIR/nvm.sh"'
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && emulate sh -c 'source "$NVM_DIR/bash_completion"'
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
