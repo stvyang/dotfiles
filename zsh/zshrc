@@ -109,3 +109,4 @@ source $ZSH_CONFIG/exports.zsh
 source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/loads.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
