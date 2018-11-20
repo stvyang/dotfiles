@@ -1,5 +1,5 @@
 ROOT=$PWD
-ln_flags="-sf"
+ln_flags="-sTf"
 
 # Zsh
 echo "Creating symlinks for zsh configuration"
