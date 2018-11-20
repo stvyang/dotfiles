@@ -1,16 +1,23 @@
+ROOT=$PWD
 ln_flags="-sf"
 
+# Zsh
+echo "Creating symlinks for zsh configuration"
+ln "$ln_flags" "$ROOT/zsh" "$HOME/.zsh"
+ln "$ln_flags" "$ROOT/zsh/zshrc" "$HOME/.zshrc"
+
 # Git
-ln "$ln_flags" "$PWD/git/gitconfig" "$HOME/.gitconfig"
+echo "Creating symlinks for git configuration"
+ln "$ln_flags" "$ROOT/git/gitconfig" "$HOME/.gitconfig"
 
 # Vim & Neovim
-NEOVIM_DIR=$HOME/.config/nvim
+echo "Creating symlinks for vim & neovim configuration"
 VIM_DIR=$HOME/.vim
+NEOVIM_DIR=$HOME/.config/nvim
 
-mkdir -p "$NEOVIM_DIR"
 mkdir -p "$VIM_DIR"
 
 ln "$ln_flags" "$VIM_DIR" "$NEOVIM_DIR"
-ln "$ln_flags" "$PWD/vim/config" "$VIM_DIR/config"
-ln "$ln_flags" "$PWD/vim/vimrc" "$NEOVIM_DIR/init.vim"
-ln "$ln_flags" "$PWD/vim/vimrc" "$HOME/.vimrc"
+ln "$ln_flags" "$ROOT/vim/config" "$VIM_DIR/config"
+ln "$ln_flags" "$ROOT/vim/vimrc" "$NEOVIM_DIR/init.vim"
+ln "$ln_flags" "$ROOT/vim/vimrc" "$HOME/.vimrc"
