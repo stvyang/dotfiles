@@ -31,12 +31,12 @@ call plug#end()
 " let g:gruvbox_contrast_dark = 'medium'
 " set background=dark
 
-" colorscheme onedark
+colorscheme onedark
 
 " colorscheme onehalfdark
 " let g:airline_theme='onehalfdark'
 
-colorscheme snazzy
+" colorscheme snazzy
 let g:airline_theme = 'wombat'
 
 " Airline 
