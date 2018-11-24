@@ -1,5 +1,6 @@
 # Man, these are the 'painkillers'
 alias g="git"
+alias t="tmux"
 alias v="nvim"
 
 # Smart mkdir that we should use

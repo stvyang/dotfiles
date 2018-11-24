@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 
 " Basics
 " ----------------------
+Plug 'christoomey/vim-tmux-navigator'         " To navigate between panes seamessly in vim
 Plug 'vim-airline/vim-airline'                " Beautiful status bars
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'                    " Display directory tree
@@ -15,7 +16,6 @@ Plug 'junegunn/fzf.vim'
 " ----------------------
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'connorholyday/vim-snazzy'
 Plug 'jacoborus/tender.vim'
 

@@ -10,6 +10,15 @@ ln "$ln_flags" "$ROOT/zsh/zshrc" "$HOME/.zshrc"
 echo "Creating symlinks for git configuration"
 ln "$ln_flags" "$ROOT/git/gitconfig" "$HOME/.gitconfig"
 
+# Tmux
+echo "Creating symlinks for tmux configuration"
+TMUX_DIR=$HOME/.tmux
+
+mkdir -p "$TMUX_DIR"
+
+ln "$ln_flags" "$ROOT/tmux/config" "$TMUX_DIR/config"
+ln "$ln_flags" "$PWD/tmux/tmux.conf" "$HOME/.tmux.conf"
+
 # Vim & Neovim
 echo "Creating symlinks for vim & neovim configuration"
 VIM_DIR=$HOME/.vim
