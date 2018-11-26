@@ -4,13 +4,15 @@ call plug#begin('~/.vim/plugged')
 
 " Basics
 " ----------------------
-Plug 'christoomey/vim-tmux-navigator'         " To navigate between panes seamessly in vim
-Plug 'vim-airline/vim-airline'                " Beautiful status bars
-Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator'         " Navigate between tmux panes on vim
+Plug 'vim-airline/vim-airline'                " Beautiful status bar
+Plug 'vim-airline/vim-airline-themes'         " Status bar themes
 Plug 'scrooloose/nerdtree'                    " Display directory tree
 Plug 'scrooloose/nerdcommenter'               " Commenter
-Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file finder 
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' } 
+Plug 'junegunn/fzf.vim'                       " Fuzzy file finder
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
+Plug 'w0rp/ale'                               " Linter
 
 " Colorschemes 
 " ----------------------
@@ -18,6 +20,12 @@ Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'connorholyday/vim-snazzy'
 Plug 'jacoborus/tender.vim'
+
+" Javascript
+" ----------------------
+Plug 'pangloss/vim-javascript'          " Javascript syntax highlighting + indentation
+Plug 'mxw/vim-jsx'                      " React JSX syntax highlighting + indentation
+Plug 'elzr/vim-json'                    " JSON syntax highlighting + indentation
 
 call plug#end()
 
