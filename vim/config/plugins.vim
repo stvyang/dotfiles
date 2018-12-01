@@ -13,6 +13,7 @@ Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                       " Fuzzy file finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 Plug 'w0rp/ale'                               " Linter
+Plug 'brooth/far.vim'                         " Find and replace
 
 " Colorschemes 
 " ----------------------

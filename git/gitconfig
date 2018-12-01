@@ -2,6 +2,26 @@
   name  = Steven Yang
   email = stv.yang10@gmail.com
 
+[core]
+  pager = diff-so-fancy | less --tabs=4 -R
+
+[color]
+  ui = true
+
+[color "diff"]
+  meta = "yellow"
+  frag = "magenta bold"
+  commit = "yellow bold"
+  old = "red bold"
+  new = "green bold"
+  whitespace = "red reverse"
+
+[color "diff-highlight"]
+  oldNormal = "red bold"
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
+
 [alias]
   a     = add
   b     = branch
@@ -12,7 +32,7 @@
   cob   = checkout -b
   com   = checkout master
   d     = diff
-  l     = log
+  l     = log --oneline --decorate --color --graph
   p     = push
   po    = push origin
   pom   = push origin master
@@ -22,5 +42,6 @@
   rb    = rebase
   rbm   = rebase master
   s     = status
+  ss    = status -s
   st    = stash
   pop   = stash pop
