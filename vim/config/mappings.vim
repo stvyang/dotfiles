@@ -10,7 +10,6 @@ nnoremap $ <nop>
 nnoremap ^ <nop>
 
 " Insert new line below/above without insert mode
-" Used for paste yanked words
 nnoremap <silent><leader>j o<Esc>
 nnoremap <silent><leader>k O<Esc>
 
@@ -46,3 +45,10 @@ nnoremap <silent> <C-p> :FZF<CR>
 nnoremap <silent> <leader>= :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 
+" Navigate to next/previous buffer
+map <leader>n :bn<CR>
+map <leader>b :bp<CR>
+
+" Delete current/all-except buffers
+map <leader>w :bd<CR>
+map <leader>q :BufOnly<CR>

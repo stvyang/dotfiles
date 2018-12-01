@@ -14,6 +14,7 @@ Plug 'junegunn/fzf.vim'                       " Fuzzy file finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 Plug 'w0rp/ale'                               " Linter
 Plug 'brooth/far.vim'                         " Find and replace
+Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
 
 " Colorschemes 
 " ----------------------
@@ -50,7 +51,8 @@ let g:airline_theme = 'wombat'
 
 " Airline 
 " ----------------------
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1              " Enable
+let g:airline#extensions#tabline#fnamemod = ':t'          " Buffer only shows file name instead of path
 
 " NERDTree
 " ----------------------
