@@ -1,5 +1,5 @@
-" leader is comma
-let mapleader=";"
+" leader is space
+let mapleader=" "
 
 " Move to beginning/end of line
 noremap H ^
@@ -11,8 +11,8 @@ nnoremap ^ <nop>
 
 " Insert new line below/above without insert mode
 " Used for paste yanked words
-nnoremap <silent><C-j> o<Esc>
-nnoremap <silent><C-k> O<Esc>
+nnoremap <silent><leader>j o<Esc>
+nnoremap <silent><leader>k O<Esc>
 
 " Ctrl+c = copy | Ctrl+v = paste
 " Only works in visual and insert mode to avoid conflict to visual-block key
@@ -41,4 +41,8 @@ vmap <C-_> <leader>c<Space>
 
 " Find file
 nnoremap <silent> <C-p> :FZF<CR>
+
+" Resize vertical splits
+nnoremap <silent> <leader>= :vertical resize +5<CR>
+nnoremap <silent> <leader>- :vertical resize -5<CR>
 
