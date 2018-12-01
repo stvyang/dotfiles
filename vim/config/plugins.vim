@@ -1,8 +1,8 @@
-" Load plugins
+" Install plugins
 " ===========================================
 call plug#begin('~/.vim/plugged')
 
-" Basics
+" General
 " ----------------------
 Plug 'christoomey/vim-tmux-navigator'         " Navigate between tmux panes on vim
 Plug 'vim-airline/vim-airline'                " Beautiful status bar
@@ -15,8 +15,11 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 Plug 'w0rp/ale'                               " Linter
 Plug 'brooth/far.vim'                         " Find and replace
 Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
+Plug 'Townk/vim-autoclose'                    " Autoclose [{()}]
+Plug 'Chiel92/vim-autoformat'                 " Autoformat indent, spaces, etc
+Plug 'JamshedVesuna/vim-markdown-preview'     " Preview markdown on browser
 
-" Colorschemes 
+" Colorscheme 
 " ----------------------
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
@@ -25,33 +28,21 @@ Plug 'jacoborus/tender.vim'
 
 " Javascript
 " ----------------------
-Plug 'pangloss/vim-javascript'          " Javascript syntax highlighting + indentation
-Plug 'mxw/vim-jsx'                      " React JSX syntax highlighting + indentation
-Plug 'elzr/vim-json'                    " JSON syntax highlighting + indentation
+Plug 'pangloss/vim-javascript'                " Javascript syntax highlighting + indentation
+Plug 'mxw/vim-jsx'                            " React JSX syntax highlighting + indentation
+Plug 'elzr/vim-json'                          " JSON syntax highlighting + indentation
 
 call plug#end()
 
 " Plugin Settings 
 " ===========================================
 
-" Colorscheme
-" ----------------------
-
-" colorscheme gruvbox
-" let g:gruvbox_contrast_dark = 'medium'
-" set background=dark
-
 colorscheme onedark
-
-" colorscheme onehalfdark
-" let g:airline_theme='onehalfdark'
-
-" colorscheme snazzy
-let g:airline_theme = 'wombat'
 
 " Airline 
 " ----------------------
-let g:airline#extensions#tabline#enabled = 1              " Enable
+let g:airline_theme = 'wombat'
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'          " Buffer only shows file name instead of path
 
 " NERDTree
@@ -87,3 +78,6 @@ let g:ale_sign_error = '×'
 let g:ale_sign_warning = '!'
 let g:ale_sign_column_always = 1              " Column for ale always shown beside line number
 
+" Vim markdown preview
+" --------------------
+let vim_markdown_preview_hotkey='<C-m>'       " Hotkey to open markdown preview
