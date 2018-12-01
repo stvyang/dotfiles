@@ -1,5 +1,5 @@
 " leader is comma
-let mapleader=","
+let mapleader=";"
 
 " Move to beginning/end of line
 noremap H ^
@@ -41,3 +41,4 @@ vmap <C-_> <leader>c<Space>
 
 " Find file
 nnoremap <silent> <C-p> :FZF<CR>
+
