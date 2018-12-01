@@ -32,7 +32,7 @@
   cob   = checkout -b
   com   = checkout master
   d     = diff
-  l     = log --oneline --decorate --color --graph
+  l     = log --graph --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)- %an%Creset' 
   p     = push
   po    = push origin
   pom   = push origin master
