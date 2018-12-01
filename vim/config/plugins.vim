@@ -73,3 +73,14 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }            " Customize fzf colors to match your color scheme
 
+" Deoplete
+" ----------------------
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#file#enable_buffer_path = 1    " Enable relative path autocomplete
+
+" Ale
+" --------------------
+let g:ale_sign_error = '×'
+let g:ale_sign_warning = '!'
+let g:ale_sign_column_always = 1              " Column for ale always shown beside line number
+
