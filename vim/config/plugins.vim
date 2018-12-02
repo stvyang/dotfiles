@@ -42,7 +42,7 @@ colorscheme onedark
 " Airline 
 " ----------------------
 let g:airline_theme = 'wombat'
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1              " Show tabline
 let g:airline#extensions#tabline#fnamemod = ':t'          " Buffer only shows file name instead of path
 
 " NERDTree
