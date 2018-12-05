@@ -52,3 +52,6 @@ map <leader>b :bp<CR>
 " Delete current/all-except buffers
 map <leader>w :bd<CR>
 map <leader>q :BufOnly<CR>
+
+" Copy relative filepath (based on cwd) of current buffer
+nnoremap <F3> :let @+ = expand("%")<CR>
