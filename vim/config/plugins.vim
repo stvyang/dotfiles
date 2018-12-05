@@ -7,8 +7,7 @@ call plug#begin('~/.vim/plugged')
 " General
 " --------------------------------------------------
 Plug 'christoomey/vim-tmux-navigator'         " Navigate between tmux panes on vim
-Plug 'vim-airline/vim-airline'                " Beautiful status bar
-Plug 'vim-airline/vim-airline-themes'         " Status bar themes
+Plug 'itchyny/lightline.vim'                  " Beautiful status bar
 Plug 'scrooloose/nerdtree'                    " Display directory tree
 Plug 'scrooloose/nerdcommenter'               " Commenter
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' } 
@@ -46,11 +45,24 @@ call plug#end()
 colorscheme onedark
 
 " --------------------------------------------------
-" Airline 
+" Lightline 
 " --------------------------------------------------
-let g:airline_theme = 'wombat'
-let g:airline#extensions#tabline#enabled = 1              " Show tabline
-let g:airline#extensions#tabline#fnamemod = ':t'          " Buffer only shows file name instead of path
+let g:lightline = {
+  \   'colorscheme': 'jellybeans',
+  \ }
+let g:lightline.active = {
+  \ 'left': [ [ 'mode', 'paste' ],
+  \           [ 'readonly', 'filename', 'modified' ] ],
+  \ 'right': [ [ 'lineinfo' ],
+  \            [ 'percent' ],
+  \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+let g:lightline.inactive = {
+  \ 'left': [ [ 'filename' ] ],
+  \ 'right': [ [ 'lineinfo' ],
+  \            [ 'percent' ] ] }
+let g:lightline.tabline = {
+  \ 'left': [ [ 'tabs' ] ],
+  \ 'right': [ [ 'close' ] ] }
 
 " --------------------------------------------------
 " NERDTree
