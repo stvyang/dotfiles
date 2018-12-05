@@ -20,6 +20,7 @@ Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
 Plug 'Townk/vim-autoclose'                    " Autoclose [{()}]
 Plug 'Chiel92/vim-autoformat'                 " Autoformat indent, spaces, etc
 Plug 'JamshedVesuna/vim-markdown-preview'     " Preview markdown on browser
+Plug 'danro/rename.vim'                       " Rename file of current buffer
 
 " --------------------------------------------------
 " Colorscheme 
@@ -87,6 +88,13 @@ let g:deoplete#file#enable_buffer_path = 1    " Enable relative path autocomplet
 let g:ale_sign_error = '×'
 let g:ale_sign_warning = '!'
 let g:ale_sign_column_always = 1              " Column for ale always shown beside line number
+
+" Vim autoclose
+" --------------------
+
+" Fix autoclose, we need to press <ESC> twice when autocompletion pops out
+" With this code we don't need to press <ESC> or 'ctrl + [' twice
+let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
 
 " --------------------------------------------------
 " Vim markdown preview
