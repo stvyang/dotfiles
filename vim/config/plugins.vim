@@ -45,7 +45,7 @@ call plug#end()
 colorscheme onedark
 
 " --------------------------------------------------
-" Lightline 
+" lightline.vim
 " --------------------------------------------------
 let g:lightline = {
   \   'colorscheme': 'jellybeans',
@@ -65,12 +65,12 @@ let g:lightline.tabline = {
   \ 'right': [ [ 'close' ] ] }
 
 " --------------------------------------------------
-" NERDTree
+" nerdtree
 " --------------------------------------------------
 let g:NERDSpaceDelims=1 
 
 " --------------------------------------------------
-" FZF
+" fzf
 " --------------------------------------------------
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'         " Remove gitignore files and dirs on fzf
 let g:fzf_colors =
@@ -89,26 +89,32 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }            " Customize fzf colors to match your color scheme
 
 " --------------------------------------------------
-" Deoplete
+" deoplete.nvim
 " --------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1    " Enable relative path autocomplete
 
 " --------------------------------------------------
-" Ale
+" ale
 " --------------------------------------------------
 let g:ale_sign_error = '×'
 let g:ale_sign_warning = '!'
 let g:ale_sign_column_always = 1              " Column for ale always shown beside line number
 
-" Vim autoclose
-" --------------------
+" --------------------------------------------------
+" vim-autoclose
+" --------------------------------------------------
 
 " Fix autoclose, we need to press <ESC> twice when autocompletion pops out
 " With this code we don't need to press <ESC> or 'ctrl + [' twice
 let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
 
 " --------------------------------------------------
-" Vim markdown preview
+" vim-markdown-preview
 " --------------------------------------------------
 let vim_markdown_preview_hotkey='<C-m>'       " Hotkey to open markdown preview
+
+" --------------------------------------------------
+" vim-jsx
+" --------------------------------------------------
+let g:jsx_ext_required = 1                    " Only enable vim-jsx in .jsx file
