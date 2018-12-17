@@ -115,6 +115,11 @@ let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
 let vim_markdown_preview_hotkey='<C-m>'       " Hotkey to open markdown preview
 
 " --------------------------------------------------
+" vim-javascript
+" --------------------------------------------------
+let g:javascript_plugin_jsdoc = 1             " Highlight JSDoc
+
+" --------------------------------------------------
 " vim-jsx
 " --------------------------------------------------
 let g:jsx_ext_required = 1                    " Only enable vim-jsx in .jsx file
