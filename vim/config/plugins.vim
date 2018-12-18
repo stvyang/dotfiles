@@ -14,6 +14,7 @@ Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                       " Fuzzy file finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 Plug 'w0rp/ale'                               " Linter
+Plug 'tpope/vim-surround'                     " Text surrounding manipulation
 Plug 'brooth/far.vim'                         " Find and replace
 Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
 Plug 'Townk/vim-autoclose'                    " Autoclose [{()}]
