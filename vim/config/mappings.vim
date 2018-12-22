@@ -34,6 +34,9 @@ nnoremap <leader><space> :nohlsearch<CR>
 " Toggle NERDTree
 map <silent> <C-n> :NERDTreeToggle<CR>
 
+" Navigate NERDTree for current buffer
+map <leader>r :NERDTreeFind<cr>
+
 " Toggle Commenter
 nmap <C-_> <leader>c<Space>
 vmap <C-_> <leader>c<Space>
