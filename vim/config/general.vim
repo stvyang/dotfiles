@@ -8,9 +8,9 @@ set laststatus=2            " always show status line
 set showcmd                 " show command on last line of screen
 set showmode                " show mode on last line of screen
 
-set tabstop=2               " number of visual spaces per tab 
-set softtabstop=2           " number of spaces per tab when pressing TAB 
-set shiftwidth=2            " number of spaces per tab when pressing >>, << or == 
+set tabstop=2               " number of visual spaces per tab
+set softtabstop=2           " number of spaces per tab when pressing TAB
+set shiftwidth=2            " number of spaces per tab when pressing >>, << or ==
 set expandtab               " tabs are spaces
 
 set cursorline              " highlight current line

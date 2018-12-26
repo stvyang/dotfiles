@@ -10,7 +10,7 @@ Plug 'christoomey/vim-tmux-navigator'         " Navigate between tmux panes on v
 Plug 'itchyny/lightline.vim'                  " Beautiful status bar
 Plug 'scrooloose/nerdtree'                    " Display directory tree
 Plug 'scrooloose/nerdcommenter'               " Commenter
-Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' } 
+Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                       " Fuzzy file finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 Plug 'w0rp/ale'                               " Linter
@@ -23,7 +23,7 @@ Plug 'JamshedVesuna/vim-markdown-preview'     " Preview markdown on browser
 Plug 'danro/rename.vim'                       " Rename file of current buffer
 
 " --------------------------------------------------
-" Colorscheme 
+" Colorscheme
 " --------------------------------------------------
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
@@ -40,7 +40,7 @@ Plug 'elzr/vim-json'                          " JSON syntax highlighting + inden
 call plug#end()
 
 " ==================================================
-" Plugin Settings 
+" Plugin Settings
 " ==================================================
 
 colorscheme onedark
@@ -68,7 +68,7 @@ let g:lightline.tabline = {
 " --------------------------------------------------
 " nerdtree
 " --------------------------------------------------
-let g:NERDSpaceDelims=1 
+let g:NERDSpaceDelims=1
 
 " --------------------------------------------------
 " fzf
@@ -109,6 +109,12 @@ let g:ale_sign_column_always = 1              " Column for ale always shown besi
 " Fix autoclose, we need to press <ESC> twice when autocompletion pops out
 " With this code we don't need to press <ESC> or 'ctrl + [' twice
 let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
+
+" --------------------------------------------------
+" vim-autoformat
+" --------------------------------------------------
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
 
 " --------------------------------------------------
 " vim-markdown-preview
