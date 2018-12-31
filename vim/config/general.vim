@@ -29,5 +29,3 @@ set autoindent              " use indent of current line when opening new line (
 
 syntax enable               " enable syntax processing
 filetype plugin indent on   " enable filetype plugins
-
-au BufWrite * :Autoformat   " auto-format when saving file

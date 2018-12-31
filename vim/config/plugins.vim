@@ -18,7 +18,7 @@ Plug 'tpope/vim-surround'                     " Text surrounding manipulation
 Plug 'brooth/far.vim'                         " Find and replace
 Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
 Plug 'Townk/vim-autoclose'                    " Autoclose [{()}]
-Plug 'Chiel92/vim-autoformat'                 " Autoformat indent, spaces, etc
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Autoformat indent, spaces, etc
 Plug 'JamshedVesuna/vim-markdown-preview'     " Preview markdown on browser
 Plug 'danro/rename.vim'                       " Rename file of current buffer
 
@@ -111,10 +111,19 @@ let g:ale_sign_column_always = 1              " Column for ale always shown besi
 let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
 
 " --------------------------------------------------
-" vim-autoformat
+" vim-prettier
 " --------------------------------------------------
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
+let g:prettier#exec_cmd_async = 1
+let g:prettier#quickfix_enabled = 0
+let g:prettier#quickfix_auto_focus = 0
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:prettier#config#print_width = 80
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#config#config_precedence = 'file-override'
 
 " --------------------------------------------------
 " vim-markdown-preview
