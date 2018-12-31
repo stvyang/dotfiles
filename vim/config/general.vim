@@ -3,6 +3,7 @@ set hidden                  " preserve buffers (such as cut, copy, undo history)
 set wildmenu                " enhanced command-line completion
 
 set number                  " show line numbers
+set relativenumber          " show relative line numbers
 set ruler                   " show line and column stats
 set laststatus=2            " always show status line
 set showcmd                 " show command on last line of screen
