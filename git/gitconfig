@@ -25,9 +25,9 @@
 [alias]
   a     = add
   b     = branch
-  cl    = clone
   cm    = commit -m
   ca    = !git add -A && git commit -m
+  cl    = clean -f
   co    = checkout
   cob   = checkout -b
   com   = checkout master
@@ -39,9 +39,11 @@
   pl    = pull
   plo   = pull origin
   plom  = pull origin master
+  rs    = reset
+  rsh   = reset --hard
+  rv    = revert
   rb    = rebase
   rbm   = rebase master
-  s     = status
-  ss    = status -s
-  st    = stash
+  s     = status -s
+  t     = tag
   pop   = stash pop
