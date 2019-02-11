@@ -58,3 +58,6 @@ map <leader>q :BufOnly<CR>
 
 " Copy relative filepath (based on cwd) of current buffer
 nnoremap <F3> :let @+ = expand("%")<CR>
+
+" Search keyword on cursor using Ack
+nnoremap <leader>a :Ack!<space>
