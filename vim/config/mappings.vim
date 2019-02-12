@@ -44,6 +44,8 @@ vmap <C-_> <leader>c<Space>
 " Find file
 nnoremap <silent> <C-p> :FZF<CR>
 
+nnoremap <silent> <leader>p :PrettierAsync<CR>
+
 " Resize vertical splits
 nnoremap <silent> <leader>= :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
