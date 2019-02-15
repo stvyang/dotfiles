@@ -46,4 +46,5 @@
   rbm   = rebase master
   s     = status -s
   t     = tag
+  u     = reset HEAD          # unstage
   pop   = stash pop
