@@ -20,7 +20,6 @@ Plug 'brooth/far.vim'                         " Find and replace
 Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
 Plug 'Townk/vim-autoclose'                    " Autoclose [{()}]
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Autoformat indent, spaces, etc
-Plug 'JamshedVesuna/vim-markdown-preview'     " Preview markdown on browser
 Plug 'danro/rename.vim'                       " Rename file of current buffer
 
 " --------------------------------------------------
@@ -30,6 +29,14 @@ Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'connorholyday/vim-snazzy'
 Plug 'jacoborus/tender.vim'
+
+" --------------------------------------------------
+" Markdown
+" --------------------------------------------------
+Plug 'godlygeek/tabular'                      " Table support for markdown
+Plug 'tpope/vim-markdown'                     " Markdown syntax highlighting
+Plug 'vimwiki/vimwiki'                        " Taking markdown notes on vim
+Plug 'suan/vim-instant-markdown'              " Preview markdown on browser
 
 " --------------------------------------------------
 " Javascript
@@ -123,7 +130,7 @@ let g:prettier#config#print_width = 120
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#config#trailing_comma = 'none'
 let g:prettier#config#config_precedence = 'file-override'
 
 " --------------------------------------------------
@@ -140,3 +147,20 @@ let g:javascript_plugin_jsdoc = 1             " Highlight JSDoc
 " vim-jsx
 " --------------------------------------------------
 let g:jsx_ext_required = 1                    " Only enable vim-jsx in .jsx file
+
+" --------------------------------------------------
+" vim-markdown
+" --------------------------------------------------
+let g:markdown_syntax_conceal = 0
+
+" --------------------------------------------------
+" vim-wiki
+" --------------------------------------------------
+let g:vimwiki_global_ext=0
+let g:vimwiki_list = [{ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+" --------------------------------------------------
+" vim-instant-markdown
+" --------------------------------------------------
+let g:instant_markdown_autostart = 0

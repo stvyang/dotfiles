@@ -63,3 +63,6 @@ nnoremap <F3> :let @+ = expand("%")<CR>
 
 " Search keyword on cursor using Ack
 nnoremap <leader>a :Ack!<space>
+
+" Preview markdown file
+nnoremap <leader>o :InstantMarkdownPreview<CR>
