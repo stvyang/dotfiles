@@ -35,7 +35,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " Navigate NERDTree for current buffer
-map <leader>r :NERDTreeFind<cr>
+map <leader>t :NERDTreeFind<cr>
 
 " Toggle Commenter
 nmap <C-_> <leader>c<Space>
@@ -66,3 +66,6 @@ nnoremap <leader>a :Ack!<space>
 
 " Preview markdown file
 nnoremap <leader>o :InstantMarkdownPreview<CR>
+
+" Replace text
+nnoremap <leader>r :%s/
