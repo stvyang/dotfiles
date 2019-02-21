@@ -34,7 +34,7 @@ Plug 'jacoborus/tender.vim'
 " Markdown
 " --------------------------------------------------
 Plug 'godlygeek/tabular'                      " Table support for markdown
-Plug 'tpope/vim-markdown'                     " Markdown syntax highlighting
+Plug 'plasticboy/vim-markdown'                " Markdown syntax highlighting
 Plug 'vimwiki/vimwiki'                        " Taking markdown notes on vim
 Plug 'suan/vim-instant-markdown'              " Preview markdown on browser
 
