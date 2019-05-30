@@ -30,3 +30,9 @@ ln "$ln_flags" "$VIM_DIR" "$NEOVIM_DIR"
 ln "$ln_flags" "$ROOT/vim/config" "$VIM_DIR/config"
 ln "$ln_flags" "$ROOT/vim/vimrc" "$NEOVIM_DIR/init.vim"
 ln "$ln_flags" "$ROOT/vim/vimrc" "$HOME/.vimrc"
+
+# Notes
+echo "Creating symlinks for dropbox"
+DROPBOX_DIR=$HOME/Dropbox
+
+ln "$ln_flags" "$DROPBOX_DIR/notes" "$HOME/notes"
