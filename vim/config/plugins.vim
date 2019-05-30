@@ -36,7 +36,7 @@ Plug 'jacoborus/tender.vim'
 Plug 'godlygeek/tabular'                      " Table support for markdown
 Plug 'plasticboy/vim-markdown'                " Markdown syntax highlighting
 Plug 'vimwiki/vimwiki'                        " Taking markdown notes on vim
-Plug 'suan/vim-instant-markdown'              " Preview markdown on browser
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " Preview markdown on browser
 
 " --------------------------------------------------
 " Javascript
@@ -44,6 +44,11 @@ Plug 'suan/vim-instant-markdown'              " Preview markdown on browser
 Plug 'pangloss/vim-javascript'                " Javascript syntax highlighting + indentation
 Plug 'mxw/vim-jsx'                            " React JSX syntax highlighting + indentation
 Plug 'elzr/vim-json'                          " JSON syntax highlighting + indentation
+
+" --------------------------------------------------
+" Go
+" --------------------------------------------------
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -159,8 +164,3 @@ let g:markdown_syntax_conceal = 0
 let g:vimwiki_global_ext=0
 let g:vimwiki_list = [{ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-
-" --------------------------------------------------
-" vim-instant-markdown
-" --------------------------------------------------
-let g:instant_markdown_autostart = 0

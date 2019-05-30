@@ -65,7 +65,7 @@ nnoremap <F3> :let @+ = expand("%")<CR>
 nnoremap <leader>a :Ack!<space>
 
 " Preview markdown file
-nnoremap <leader>o :InstantMarkdownPreview<CR>
+nnoremap <leader>o :MarkdownPreview<CR>
 
 " Replace text
 nnoremap <leader>r :%s/
