@@ -41,7 +41,7 @@
   plo   = pull origin
   plom  = pull origin master
   rs    = reset
-  rsh   = reset --hard
+  rsh   = reset HEAD
   rv    = revert
   rb    = rebase
   rbm   = rebase master
