@@ -110,3 +110,6 @@ source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/loads.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
