@@ -34,8 +34,7 @@ Plug 'jacoborus/tender.vim'
 " Markdown
 " --------------------------------------------------
 Plug 'godlygeek/tabular'                      " Table support for markdown
-Plug 'plasticboy/vim-markdown'                " Markdown syntax highlighting
-Plug 'vimwiki/vimwiki'                        " Taking markdown notes on vim
+Plug 'gabrielelana/vim-markdown'              " Markdown syntax highlighting
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " Preview markdown on browser
 
 " --------------------------------------------------
@@ -152,15 +151,3 @@ let g:javascript_plugin_jsdoc = 1             " Highlight JSDoc
 " vim-jsx
 " --------------------------------------------------
 let g:jsx_ext_required = 1                    " Only enable vim-jsx in .jsx file
-
-" --------------------------------------------------
-" vim-markdown
-" --------------------------------------------------
-let g:markdown_syntax_conceal = 0
-
-" --------------------------------------------------
-" vim-wiki
-" --------------------------------------------------
-let g:vimwiki_global_ext=0
-let g:vimwiki_list = [{ 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
