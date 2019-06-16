@@ -61,8 +61,8 @@ map <leader>q :BufOnly<CR>
 " Copy relative filepath (based on cwd) of current buffer
 nnoremap <F3> :let @+ = expand("%")<CR>
 
-" Search keyword on cursor using Ack
-nnoremap <leader>a :Ack!<space>
+" Search keyword on cursor using Ag
+nnoremap <leader>a :Ag<space>
 
 " Preview markdown file
 nnoremap <leader>o :MarkdownPreview<CR>
