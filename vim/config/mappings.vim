@@ -9,7 +9,7 @@ noremap L $
 nnoremap $ <nop>
 nnoremap ^ <nop>
 
-" Insert new line below/above without insert mode
+" Insert one line below/above on normal mode
 nnoremap <silent><leader>j o<Esc>
 nnoremap <silent><leader>k O<Esc>
 
@@ -28,23 +28,14 @@ inoremap <C-s> <ESC>:w<CR>a
 " Quit file
 nnoremap <C-q> :q<CR>
 
-" Turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
-
-" Toggle NERDTree
+" Toggle file tree
 map <silent> <C-n> :NERDTreeToggle<CR>
 
-" Navigate NERDTree for current buffer
+" Navigate file tree for current buffer
 map <leader>t :NERDTreeFind<cr>
-
-" Toggle Commenter
-nmap <C-_> <leader>c<Space>
-vmap <C-_> <leader>c<Space>
 
 " Find file
 nnoremap <silent> <C-p> :FZF<CR>
-
-nnoremap <silent> <leader>p :PrettierAsync<CR>
 
 " Resize vertical splits
 nnoremap <silent> <leader>= :vertical resize +5<CR>
@@ -54,18 +45,23 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 map <leader>n :bn<CR>
 map <leader>b :bp<CR>
 
-" Delete current/all-except buffers
-map <leader>w :bd<CR>
+" Close all buffers except this
 map <leader>q :BufOnly<CR>
 
-" Copy relative filepath (based on cwd) of current buffer
-nnoremap <F3> :let @+ = expand("%")<CR>
+" Find keyword on all files
+nnoremap <leader>f :Ag<space>
 
-" Search keyword on cursor using Ag
-nnoremap <leader>a :Ag<space>
+" Replace keyword
+nnoremap <leader>r :%s/
+
+" Turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Reformat code (make code *pretty*)
+nnoremap <silent> <leader>p :PrettierAsync<CR>
+
+" Copy relative file path (based on cwd) of current buffer
+nnoremap <F3> :let @+ = expand("%")<CR>
 
 " Preview markdown file
 nnoremap <leader>o :MarkdownPreview<CR>
-
-" Replace text
-nnoremap <leader>r :%s/

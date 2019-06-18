@@ -1,0 +1,76 @@
+set relativenumber          " show relative line numbers
+set tabstop=2               " number of visual spaces per tab
+set softtabstop=2           " number of spaces per tab when pressing TAB
+set shiftwidth=2            " number of spaces per tab when pressing >>, << or ==
+set expandtab               " tabs are spaces
+
+set hlsearch                " highlight matches search
+set incsearch               " show where the search pattern matches as we typed
+set ignorecase              " case insensitive search
+set smartcase               " if search contains uppercase, it's case sensitive, otherwise, it's not
+
+" leader is space
+let mapleader=" "
+
+" Move to beginning/end of line
+noremap L $
+noremap H ^
+
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
+" Insert one line below/above on normal mode
+nnoremap <leader>j o<Esc>
+nnoremap <leader>k O<Esc>
+
+" Ctrl+c = copy | Ctrl+v = paste
+" Only works in visual and insert mode to avoid conflict to visual-block key
+" <C-v> in normal mode
+vmap <C-c> "+y
+vmap <C-x> "+d
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>:action $Paste<CR> i
+
+" Save file
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>a
+
+" Quit file
+nnoremap <C-q> :q<CR>
+
+" Find file
+nnoremap <C-p> :action SearchEverywhere<CR>
+
+" Navigate to next/previous tab
+nmap <leader>n :action NextTab<CR>
+nmap <leader>b :action PreviousTab<CR>
+
+" Split window vertically/horizontally
+nnoremap <C-S-v> :action SplitVertically<CR>
+nnoremap <C-S-h> :action SplitHorizontally<CR>
+
+" Key bindings for quickly moving between windows
+" Ctrl-h = left, Ctrl-l = right, Ctrl-k = up, Ctrl-j = down
+nmap <C-h> <c-w>h
+nmap <C-l> <c-w>l
+nmap <C-k> <c-w>k
+nmap <C-j> <c-w>j
+
+" Close all editors except this
+map <leader>q :action CloseAllEditorsButActive<CR>
+
+" Find keyword on all files
+nnoremap <leader>f :action FindInPath<CR>
+
+" Replace keyword
+nnoremap <leader>r :action RenameElement<CR>
+
+" Turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Reformat code (make code *pretty*)
+nnoremap <leader>p :action ReformatCode<CR>
+
+" Copy relative file path (based on cwd) of current editor
+nnoremap <F3> :action CopyReference<CR>

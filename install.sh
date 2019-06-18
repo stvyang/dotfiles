@@ -31,6 +31,11 @@ ln "$ln_flags" "$ROOT/vim/config" "$VIM_DIR/config"
 ln "$ln_flags" "$ROOT/vim/vimrc" "$NEOVIM_DIR/init.vim"
 ln "$ln_flags" "$ROOT/vim/vimrc" "$HOME/.vimrc"
 
+# IdeaVim
+echo "Creating symlinks for ideavim configuration"
+
+ln "$ln_flags" "$ROOT/vim/ideavimrc" "$HOME/.ideavimrc"
+
 # Notes
 echo "Creating symlinks for dropbox"
 DROPBOX_DIR=$HOME/Dropbox
