@@ -12,6 +12,8 @@ export GITHUB_EMAIL="stv.yang10@gmail.com"
 
 export NOTES="$HOME/notes"
 
+export PERSONAL="$HOME/Personal"
+
 export DOTFILES="$HOME/Code/Personal/dotfiles"
 
 export SCRIPTS="$HOME/Code/Personal/scripts"
