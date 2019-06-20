@@ -74,3 +74,6 @@ nnoremap <leader>p :action ReformatCode<CR>
 
 " Copy relative file path (based on cwd) of current editor
 nnoremap <F3> :action CopyReference<CR>
+
+" Open quick documentation
+nnoremap qq :action QuickJavaDoc<CR>
