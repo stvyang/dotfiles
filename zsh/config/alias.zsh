@@ -17,3 +17,6 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # Reload ZSH configuration
 alias reload='source ~/.zshrc'
+
+# Bcl
+alias bcl="$HOME/.local/bin/bcl"
