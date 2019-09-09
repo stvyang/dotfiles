@@ -1,10 +1,19 @@
 ROOT=$PWD
 ln_flags="-sTf"
 
+# Folders
+echo "Creating folders if not exist"
+mkdir -pv $HOME/notes
+mkdir -pv $HOME/Code/Personal
+mkdir -pv $HOME/Code/Personal/dotfiles
+mkdir -pv $HOME/Code/Personal/scripts
+mkdir -pv $HOME/Code/Workspace
+
 # Zsh
 echo "Creating symlinks for zsh configuration"
 ln "$ln_flags" "$ROOT/zsh/config" "$HOME/.zsh"
 ln "$ln_flags" "$ROOT/zsh/zshrc" "$HOME/.zshrc"
+ln "$ln_flags" "$ROOT/zsh/zshenv" "$HOME/.zshenv"
 
 # Git
 echo "Creating symlinks for git configuration"

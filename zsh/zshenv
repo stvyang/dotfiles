@@ -1,0 +1,7 @@
+toworkspace() {
+  builtin cd "$WORKSPACE/$1"
+}
+
+topersonal() {
+  builtin cd "$PERSONAL/$1"
+}

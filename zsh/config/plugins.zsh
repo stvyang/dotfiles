@@ -6,9 +6,6 @@ source $HOME/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Bundles from the default repo
-antigen bundle git
-
 # Bundles lambda-pure theme
 antigen bundle mafredri/zsh-async
 antigen bundle marszall87/lambda-pure

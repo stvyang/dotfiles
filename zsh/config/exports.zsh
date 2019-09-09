@@ -11,10 +11,9 @@ export GITHUB_EMAIL="stv.yang10@gmail.com"
 # Shorthand
 export NOTES="$HOME/notes"
 export PERSONAL="$HOME/Code/Personal"
+export WORKSPACE="$HOME/Code/Workspace"
 export DOTFILES="$HOME/Code/Personal/dotfiles"
 export SCRIPTS="$HOME/Code/Personal/scripts"
-export PLAYGROUND="$HOME/Code/Personal/playground"
-export INDODANA="$HOME/Code/Indodana"
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
