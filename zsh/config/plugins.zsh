@@ -8,7 +8,7 @@ antigen use oh-my-zsh
 
 # Bundles lambda-pure theme
 antigen bundle mafredri/zsh-async
-antigen bundle marszall87/lambda-pure
+antigen bundle stvyang/lambda-pure      # Temporary revert for commit https://github.com/marszall87/lambda-pure/commit/62323a6be3224f8bb57b3724d045ffda79ad277d
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting

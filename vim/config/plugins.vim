@@ -14,7 +14,7 @@ Plug 'mileszs/ack.vim'                        " Search tool
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                       " Fuzzy file finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
-Plug 'w0rp/ale'                               " Linter
+Plug 'w0rp/ale', { 'tag': 'v2.4.0' }          " Linter. Temporary fallback because of https://github.com/dense-analysis/ale/issues/2764
 Plug 'tpope/vim-surround'                     " Text surrounding manipulation
 Plug 'brooth/far.vim'                         " Find and replace
 Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
