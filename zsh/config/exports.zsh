@@ -17,6 +17,7 @@ export SCRIPTS="$HOME/Code/Personal/scripts"
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/.go
 
 # React Native
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -25,5 +26,11 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Vault
+export PATH=$PATH:$HOME/vault
+
 # Other
 export EDITOR='nvim'
+
+# Work
+source $DOTFILES/.work/aliases
