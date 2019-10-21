@@ -22,30 +22,28 @@
   newNormal = "green bold"
   newHighlight = "green bold 22"
 
+# I don't alias potentially dangerous operations such as `clean`, `revert` and `reset`
 [alias]
   a     = add
   b     = branch
   cm    = commit -m
   ca    = !git add -A && git commit -m
-  cl    = clean -f
   co    = checkout
   cob   = checkout -b
   com   = checkout master
-  d     = diff
-  dc    = diff --cached       # diff on staging area
+  dw    = diff                # diff on working directory/tree
+  ds    = diff --cached       # diff on staging area/index
   l     = log --graph --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)- %an%Creset' 
   p     = push
   po    = push origin
   pom   = push origin master
+  pop   = stash pop
   pl    = pull
   plo   = pull origin
   plom  = pull origin master
-  rs    = reset
-  rsh   = reset HEAD
-  rv    = revert
   rb    = rebase
+  rbc   = rebase --continue
   rbm   = rebase master
+  rbs   = rebase --skip
   s     = status -s
   t     = tag
-  u     = reset HEAD          # unstage
-  pop   = stash pop
