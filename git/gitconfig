@@ -31,7 +31,7 @@
   co    = checkout
   cob   = checkout -b
   com   = checkout master
-  dw    = diff                # diff on working directory/tree
+  d     = diff                # diff on working directory/tree
   ds    = diff --cached       # diff on staging area/index
   l     = log --graph --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)- %an%Creset' 
   p     = push
