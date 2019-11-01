@@ -1,7 +1,7 @@
 # nvm
 export NVM_DIR="$HOME/.nvm"
 
-# Arcanist
+# Register Arcanist's "arc" as a command in PATH
 export PATH="$PATH:$HOME/arcanist/arcanist/bin"
 
 # Github
@@ -33,4 +33,4 @@ export PATH=$PATH:$HOME/vault
 export EDITOR='nvim'
 
 # Work
-source $DOTFILES/.work/aliases
+source $DOTFILES/.work/exports.zsh

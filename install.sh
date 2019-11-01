@@ -13,7 +13,6 @@ mkdir -pv $HOME/Code/Workspace
 echo "Creating symlinks for zsh configuration"
 ln "$ln_flags" "$ROOT/zsh/config" "$HOME/.zsh"
 ln "$ln_flags" "$ROOT/zsh/zshrc" "$HOME/.zshrc"
-ln "$ln_flags" "$ROOT/zsh/zshenv" "$HOME/.zshenv"
 
 # Git
 echo "Creating symlinks for git configuration"

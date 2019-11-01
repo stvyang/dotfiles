@@ -19,5 +19,4 @@ agr() {
 }
 
 # Work
-
-source $DOTFILES/.work/functions
+source $DOTFILES/.work/functions.zsh
