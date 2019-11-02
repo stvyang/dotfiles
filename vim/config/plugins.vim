@@ -25,10 +25,12 @@ Plug 'danro/rename.vim'                       " Rename file of current buffer
 " --------------------------------------------------
 " Colorscheme
 " --------------------------------------------------
-Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
-Plug 'connorholyday/vim-snazzy'
-Plug 'jacoborus/tender.vim'
+Plug 'gosukiwi/vim-atom-dark'                 " A little bit high contrast but I like this overall
+
+" Other colorscheme worth mentioning:
+" - romainl/Apprentice                        " Low contrast
+" - joshdick/onedark.vim                      " Playful colors
+" - jacoborus/tender.vim                      " Stable choice
 
 " --------------------------------------------------
 " Markdown
@@ -38,15 +40,11 @@ Plug 'gabrielelana/vim-markdown'              " Markdown syntax highlighting
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " Preview markdown on browser
 
 " --------------------------------------------------
-" Javascript
+" Language Syntax Highlighting & Indentation
 " --------------------------------------------------
-Plug 'pangloss/vim-javascript'                " Javascript syntax highlighting + indentation
-Plug 'mxw/vim-jsx'                            " React JSX syntax highlighting + indentation
-Plug 'elzr/vim-json'                          " JSON syntax highlighting + indentation
-
-" --------------------------------------------------
-" Go
-" --------------------------------------------------
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
@@ -54,8 +52,7 @@ call plug#end()
 " ==================================================
 " Plugin Settings
 " ==================================================
-
-colorscheme onedark
+colorscheme atom-dark
 
 " --------------------------------------------------
 " lightline.vim
