@@ -29,8 +29,3 @@ alias reload='source ~/.zshrc'
 
 # Shorthand
 alias bcl="$HOME/.local/bin/bcl"
-
-# Kubernetes
-alias kube-get-pods="kubectl get pods"
-alias kube-logs="kubectl logs --tail=200 -f"
-alias kube-restart-pods="kubectl delete pods"
