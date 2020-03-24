@@ -19,6 +19,9 @@ export SCRIPTS="$HOME/Code/Personal/scripts"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/.go
 
+# Rust
+export PATH=$HOME/.cargo/bin:$PATH
+
 # React Native
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator

@@ -9,7 +9,7 @@ alias clear-vim="rm -r $HOME/.local/share/nvim/swap/"
 # Smart mkdir that we should use
 alias mkdir='mkdir -pv'
 
-# This is how I "operates". I am machine?? lul
+# This is how I "operates". I am machine?? Lul
 alias notes="code $NOTES"
 alias vscode="code ."
 alias dotfiles="cd $DOTFILES"

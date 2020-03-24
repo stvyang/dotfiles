@@ -46,6 +46,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -78,11 +79,12 @@ let g:lightline.tabline = {
 " nerdtree
 " --------------------------------------------------
 let g:NERDSpaceDelims=1
+let g:NERDTreeShowHidden=1
 
 " --------------------------------------------------
 " fzf
 " --------------------------------------------------
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'         " Remove gitignore files and dirs on fzf
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
