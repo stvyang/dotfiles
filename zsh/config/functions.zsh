@@ -1,3 +1,11 @@
+# cd up multiple dir levels
+
+cd_up() {
+  builtin cd $(printf "%0.s../" $(seq 1 $1 ));
+}
+
+alias 'cd..'='cd_up'
+
 # Fast directory switching!
 
 home() {
@@ -10,6 +18,12 @@ work() {
 
 pet() {
   builtin cd "$PERSONAL/$1"
+}
+
+# Display current directory on file explorer
+
+file-explorer() {
+  nautilus --browser $(pwd);
 }
 
 # Find and replace
