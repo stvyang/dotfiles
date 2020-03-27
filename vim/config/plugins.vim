@@ -21,6 +21,7 @@ Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
 Plug 'Townk/vim-autoclose'                    " Autoclose [{()}]
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Autoformat indent, spaces, etc
 Plug 'danro/rename.vim'                       " Rename file of current buffer
+Plug 'tpope/vim-fugitive'                     " Git plugin
 
 " --------------------------------------------------
 " Colorscheme
