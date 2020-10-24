@@ -2,6 +2,14 @@ set termguicolors           " enable truecolor support
 set hidden                  " preserve buffers (such as cut, copy, undo history) when switching files
 set wildmenu                " enhanced command-line completion
 
+" We don't need any backup atm. These settings only ensure vim.coc is working as expected
+" How does these settings works? https://vi.stackexchange.com/questions/16843/what-does-nowritebackup-actually-do/16846
+set nobackup
+set nowritebackup
+
+set updatetime=300          " having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
+set signcolumn=auto         " unlike what's recommended on vim.coc to display the signcolumn on initial file load, I prefer that it appears after the linting of LSP is activated
+
 set number                  " show line numbers
 set relativenumber          " show relative line numbers
 set ruler                   " show line and column stats

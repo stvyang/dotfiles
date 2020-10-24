@@ -37,6 +37,7 @@ ln "$ln_flags" "$VIM_DIR" "$NEOVIM_DIR"
 ln "$ln_flags" "$ROOT/vim/config" "$VIM_DIR/config"
 ln "$ln_flags" "$ROOT/vim/vimrc" "$NEOVIM_DIR/init.vim"
 ln "$ln_flags" "$ROOT/vim/vimrc" "$HOME/.vimrc"
+ln "$ln_flags" "$ROOT/vim/coc-settings.json" "$NEOVIM_DIR/coc-settings.json"
 
 # IdeaVim
 echo "Creating symlinks for ideavim configuration"
