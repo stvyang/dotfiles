@@ -110,6 +110,7 @@ let g:ale_sign_column_always = 1              " Column for ale always shown besi
 " --------------------------------------------------
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
+  \ 'coc-rust-analyzer',
   \ 'coc-json',
   \ 'coc-prettier',
   \ 'coc-snippets',

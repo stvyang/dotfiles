@@ -109,6 +109,7 @@ source $ZSH_CONFIG/aliases.zsh
 source $ZSH_CONFIG/functions.zsh
 source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/loads.zsh
+source $ZSH_CONFIG/work.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

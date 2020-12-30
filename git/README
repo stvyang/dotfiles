@@ -1,0 +1,3 @@
+INTERESTING COMMANDS
+
+- Replace local branch to origin: git rev-parse --abbrev-ref HEAD | xargs -I {} sh -c "git reset --hard origin/{}"
