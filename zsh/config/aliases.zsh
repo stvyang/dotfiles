@@ -2,6 +2,7 @@
 alias g="git"
 alias t="tmux"
 alias v="nvim"
+alias vscode="code ."
 
 # Remove all stored changes when your computer crashed
 alias clear-vim="rm -r $HOME/.local/share/nvim/swap/"
@@ -10,8 +11,6 @@ alias clear-vim="rm -r $HOME/.local/share/nvim/swap/"
 alias mkdir='mkdir -pv'
 
 # This is how I "operates". I am machine?? Lul
-alias notes="code $NOTES"
-alias vscode="code ."
 alias dotfiles="cd $DOTFILES"
 alias scripts="cd $SCRIPTS"
 
@@ -26,6 +25,3 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # Reload ZSH configuration
 alias reload='source ~/.zshrc'
-
-# Shorthand
-alias bcl="$HOME/.local/bin/bcl"

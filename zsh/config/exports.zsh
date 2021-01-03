@@ -1,15 +1,17 @@
+# General
+export PATH="$HOME/.local/bin:$PATH"
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 
 # Register Arcanist's "arc" as a command in PATH
-export PATH="$PATH:$HOME/arcanist/arcanist/bin"
+# export PATH="$PATH:$HOME/arcanist/arcanist/bin" Install first under work
 
 # Github
 export GITHUB_USERNAME="stvyang"
 export GITHUB_EMAIL="stv.yang10@gmail.com"
 
 # Shorthand
-export NOTES="$HOME/notes"
 export PERSONAL="$HOME/Code/Personal"
 export WORKSPACE="$HOME/Code/Workspace"
 export DOTFILES="$HOME/Code/Personal/dotfiles"
@@ -22,18 +24,11 @@ export GOPATH=$HOME/.go
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH
 
-# React Native
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
 # Vault
-export PATH=$PATH:$HOME/vault
+# export PATH=$PATH:$HOME/vault TODO: Install first under general
 
 # Other
 export EDITOR='nvim'
 
 # Work
-source $DOTFILES/.work/exports.zsh
+# source $DOTFILES/.work/exports.zsh

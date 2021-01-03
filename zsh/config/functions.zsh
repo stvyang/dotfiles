@@ -16,7 +16,7 @@ work() {
   builtin cd "$WORKSPACE/$1"
 }
 
-pet() {
+personal() {
   builtin cd "$PERSONAL/$1"
 }
 
@@ -38,6 +38,3 @@ php_use() {
   sudo update-alternatives --set php-config "/usr/bin/php-config$1"
   sudo update-alternatives --set phpize "/usr/bin/phpize$1"
 }
-
-# Work
-source $DOTFILES/.work/functions.zsh
