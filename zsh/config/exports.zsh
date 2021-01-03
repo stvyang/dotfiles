@@ -29,6 +29,3 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 # Other
 export EDITOR='nvim'
-
-# Work
-# source $DOTFILES/.work/exports.zsh

@@ -33,6 +33,7 @@ agr() {
 }
 
 # Change PHP version
+
 php_use() {
   sudo update-alternatives --set php "/usr/bin/php$1"
   sudo update-alternatives --set php-config "/usr/bin/php-config$1"

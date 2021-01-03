@@ -3,6 +3,7 @@ ln_flags="-sTf"
 
 # Folders
 echo "Creating folders if not exist"
+mkdir -pv $HOME/Code/Personal
 mkdir -pv $HOME/Code/Workspace
 
 # Zsh
@@ -36,14 +37,7 @@ ln "$ln_flags" "$ROOT/vim/vimrc" "$NEOVIM_DIR/init.vim"
 ln "$ln_flags" "$ROOT/vim/vimrc" "$HOME/.vimrc"
 ln "$ln_flags" "$ROOT/vim/coc-settings.json" "$NEOVIM_DIR/coc-settings.json"
 
-# # IdeaVim
+# IdeaVim
 echo "Creating symlinks for ideavim configuration"
 
 ln "$ln_flags" "$ROOT/vim/ideavimrc" "$HOME/.ideavimrc"
-
-# Themes
-pushd $ROOT/themes > /dev/null
-find . -name '*.sh' -print0 | xargs -0 chmod u+x
-./atom-dark.sh
-./one-dark.sh
-popd > /dev/null
