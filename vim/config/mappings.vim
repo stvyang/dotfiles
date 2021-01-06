@@ -62,7 +62,7 @@ nnoremap <leader>r :%s/
 nnoremap <leader><space> :nohlsearch<CR>
 
 " Reformat code (make code *pretty*)
-nnoremap <silent> <leader>p :PrettierAsync<CR>
+nnoremap <silent> <leader>p :CocCommand prettier.formatFile<CR>
 
 " Copy relative file path (based on cwd) of current buffer
 nnoremap <F3> :let @+ = expand("%")<CR>
