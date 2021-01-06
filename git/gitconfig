@@ -30,20 +30,18 @@
   ca    = !git add -A && git commit -m
   co    = checkout
   cob   = checkout -b
-  com   = checkout master
-  d     = diff                # diff on working directory/tree
-  ds    = diff --cached       # diff on staging area/index
+  com   = !git checkout main > /dev/null 2>&1 || git checkout master
+  d     = diff                # diff on working area
+  ds    = diff --cached       # diff on staging area
   l     = log --graph --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)- %an%Creset' 
   p     = push
   po    = push origin
-  pom   = push origin master
   pop   = stash pop
   pl    = pull
   plo   = pull origin
-  plom  = pull origin master
   rb    = rebase
   rbc   = rebase --continue
-  rbm   = rebase master
+  rbm   = !git rebase main > /dev/null 2>&1 || git rebase master
   rbs   = rebase --skip
   s     = status -s
   t     = tag
