@@ -109,10 +109,11 @@ let g:ale_sign_column_always = 1              " Column for ale always shown besi
 " vim-coc
 " --------------------------------------------------
 let g:coc_global_extensions = [
-  \ 'coc-tsserver',
-  \ 'coc-rust-analyzer',
   \ 'coc-json',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
   \ 'coc-prettier',
+  \ 'coc-rust-analyzer',
   \ 'coc-snippets',
 \]
 
