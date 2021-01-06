@@ -21,5 +21,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/.go
 
+# zsh-nvm
+export NVM_COMPLETION=true
+export NVM_LAZY_LOAD=true
+
 # Other
 export EDITOR='nvim'
