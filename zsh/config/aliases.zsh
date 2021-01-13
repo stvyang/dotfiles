@@ -13,6 +13,7 @@ alias mkdir='mkdir -pv'
 # This is how I "operates". I am machine?? Lul
 alias dotfiles="cd $DOTFILES"
 alias scripts="cd $SCRIPTS"
+alias gstart="cd $PERSONAL/getting-started"
 
 # List used ports
 alias ports='netstat -tulanp'
