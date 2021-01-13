@@ -1,9 +1,6 @@
 {
   "diagnostic.errorSign": "×",
   "diagnostic.warningSign": "!",
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript"
-  ],
   "languageserver": {},
   "tsserver.npm": "/usr/bin/npm"
 }
