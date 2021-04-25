@@ -14,6 +14,9 @@ alias mkdir='mkdir -pv'
 alias dotfiles="cd $DOTFILES"
 alias hayai="cd $HAYAI"
 
+# My preferred way of using "The Silver Searcher"
+alias ag="ag --nogroup --column"
+
 # List used ports
 alias ports='netstat -tulanp'
 
