@@ -12,7 +12,7 @@ export GITHUB_EMAIL="stv.yang10@gmail.com"
 export PERSONAL="$HOME/Code/Personal"
 export WORKSPACE="$HOME/Code/Workspace"
 export DOTFILES="$HOME/Code/Personal/dotfiles"
-export SCRIPTS="$HOME/Code/Personal/scripts"
+export HAYAI="$HOME/Code/Personal/hayai"
 
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH

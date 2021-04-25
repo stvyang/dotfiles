@@ -1,6 +1,6 @@
 # dotfiles
 
-### TODO
-- IMPORTANT: clone and finish `https://github.com/stvyang/scripts` first
+### Installation
+- Install necessary softwares before setup dotfiles. <TODO: Add guide>
 - Run `source install.sh` to configure git, zsh, tmux and vim
 - Open vim, then `:PlugInstall`
