@@ -62,7 +62,7 @@ nnoremap <leader>r :%s/
 nnoremap <leader><space> :nohlsearch<CR>
 
 " Reformat code (make code *pretty*)
-nnoremap <silent> <leader>p :CocCommand prettier.formatFile<CR>
+nnoremap <leader>p :CocCommand prettier.formatFile<CR>
 
 " Copy relative file path (based on cwd) of current buffer
 nnoremap <F3> :let @+ = expand("%")<CR>
@@ -74,11 +74,20 @@ nnoremap <leader>o :MarkdownPreview<CR>
 " coc.nvim
 " --------------------------------------------------
 
+" Make <CR> auto-select the first completion item and notify coc.nvim to 'Format on Enter'
+"   because <cr> could be remapped by other vim plugin
+" <CR> is Carriage Return -> possible of codes returned by the autocompletion
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " Code navigation (GoTo)
-nmap <silent> gd :vsplit<CR><Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> gd :vsplit<CR><Plug>(coc-definition)
+nnoremap <silent> gy <Plug>(coc-type-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gr <Plug>(coc-references)
 
 " Show documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -91,8 +100,11 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Choose an action
+nnoremap <leader>a <Plug>(coc-codeaction)
+
 " Code renaming
-nmap <leader>rr <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')

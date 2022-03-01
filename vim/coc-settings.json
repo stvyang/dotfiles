@@ -1,6 +1,10 @@
 {
   "diagnostic.errorSign": "×",
   "diagnostic.warningSign": "!",
+  "eslint.autoFixOnSave": true,
+  "javascript.validate.enable": false,
   "languageserver": {},
-  "tsserver.npm": "/usr/bin/npm"
+  "prettier.eslintIntegration": true,
+  "tsserver.npm": "/usr/bin/npm",
+  "rust-analyzer.updates.prompt": false
 }
