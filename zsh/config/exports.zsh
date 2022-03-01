@@ -9,10 +9,10 @@ export GITHUB_USERNAME="stvyang"
 export GITHUB_EMAIL="stv.yang10@gmail.com"
 
 # Shorthand
-export PERSONAL="$HOME/Code/Personal"
-export WORKSPACE="$HOME/Code/Workspace"
-export DOTFILES="$HOME/Code/Personal/dotfiles"
-export HAYAI="$HOME/Code/Personal/hayai"
+export PERSONAL="$HOME/code/personal"
+export WORKSPACE="$HOME/code/workspace"
+export DOTFILES="$HOME/code/personal/dotfiles"
+export HAYAI="$HOME/code/personal/hayai"
 
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH

@@ -105,14 +105,17 @@ plugins=(
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Load additional setup
+# Load additional setup (personal)
 source $ZSH_CONFIG/config/exports.zsh
 source $ZSH_CONFIG/config/aliases.zsh
 source $ZSH_CONFIG/config/functions.zsh
 source $ZSH_CONFIG/config/plugins.zsh
 source $ZSH_CONFIG/config/loads.zsh
+
+# Load additional setup (work)
 [ -f $ZSH_CONFIG/work/index.zsh ] && source $ZSH_CONFIG/work/index.zsh
 
+# Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

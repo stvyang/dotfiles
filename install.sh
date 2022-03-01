@@ -3,12 +3,12 @@ ln_flags="-sTf"
 
 # Folders
 echo "Creating folders if not exist"
-mkdir -pv $HOME/Notes/Personal
-mkdir -pv $HOME/Notes/Workspace
-mkdir -pv $HOME/Testing/Personal
-mkdir -pv $HOME/Testing/Workspace
-mkdir -pv $HOME/Code/Personal
-mkdir -pv $HOME/Code/Workspace
+mkdir -pv $HOME/notes/personal
+mkdir -pv $HOME/notes/workspace
+mkdir -pv $HOME/testing/personal
+mkdir -pv $HOME/testing/porkspace
+mkdir -pv $HOME/code/personal
+mkdir -pv $HOME/code/workspace
 
 # Zsh
 echo "Creating symlinks for zsh configuration"
