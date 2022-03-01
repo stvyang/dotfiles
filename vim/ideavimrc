@@ -64,7 +64,7 @@ map <leader>q :action CloseAllEditorsButActive<CR>
 nnoremap <leader>f :action FindInPath<CR>
 
 " Replace keyword
-nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>rn :action RenameElement<CR>
 
 " Turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
@@ -76,4 +76,5 @@ nnoremap <leader>p :action ReformatCode<CR>
 nnoremap <F3> :action CopyReference<CR>
 
 " Open quick documentation
-nnoremap qq :action QuickJavaDoc<CR>
+nnoremap K :action QuickJavaDoc<CR>
+
