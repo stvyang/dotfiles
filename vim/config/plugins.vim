@@ -15,7 +15,6 @@ Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                       " Fuzzy file finder
 Plug 'tpope/vim-surround'                     " Text surrounding manipulation
 Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
-Plug 'Townk/vim-autoclose'                    " Autoclose [{()}]
 Plug 'danro/rename.vim'                       " Rename file of current buffer
 Plug 'tpope/vim-fugitive'                     " Git plugin
 Plug 'neoclide/coc.nvim', { 'branch': 'release' } " Intellisense
@@ -110,11 +109,13 @@ let g:ale_sign_column_always = 1              " Column for ale always shown besi
 " --------------------------------------------------
 let g:coc_global_extensions = [
   \ 'coc-json',
+  \ 'coc-pairs',
+  \ 'coc-snippets',
   \ 'coc-tsserver',
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-rust-analyzer',
-  \ 'coc-snippets',
+  \ 'coc-pyright'
 \]
 
 " --------------------------------------------------
