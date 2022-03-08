@@ -121,3 +121,8 @@ source $ZSH_CONFIG/config/loads.zsh
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# BCL autocomplete
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+source ~/.bash_completion
