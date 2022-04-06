@@ -13,6 +13,7 @@ export PERSONAL="$HOME/code/personal"
 export WORKSPACE="$HOME/code/workspace"
 export DOTFILES="$HOME/code/personal/dotfiles"
 export HAYAI="$HOME/code/personal/hayai"
+export INSUTORU="$HOME/code/personal/insutoru"
 
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH

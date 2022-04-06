@@ -13,6 +13,7 @@ alias mkdir='mkdir -pv'
 # This is how I "operates". I am machine?? Lul
 alias dotfiles="cd $DOTFILES"
 alias hayai="cd $HAYAI"
+alias insutoru="cd $INSUTORU"
 
 # My preferred way of using "The Silver Searcher"
 alias ag="ag --nogroup --column"
