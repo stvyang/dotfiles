@@ -1,4 +1,5 @@
 set relativenumber          " show relative line numbers
+set number                  " print the line number in front of each line
 set tabstop=2               " number of visual spaces per tab
 set softtabstop=2           " number of spaces per tab when pressing TAB
 set shiftwidth=2            " number of spaces per tab when pressing >>, << or ==
