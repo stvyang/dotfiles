@@ -3,10 +3,6 @@ ln_flags="-sTf"
 
 # Folders
 echo "Creating folders if not exist"
-mkdir -pv $HOME/notes/personal
-mkdir -pv $HOME/notes/workspace
-mkdir -pv $HOME/testing/personal
-mkdir -pv $HOME/testing/porkspace
 mkdir -pv $HOME/code/personal
 mkdir -pv $HOME/code/workspace
 
