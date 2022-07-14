@@ -13,7 +13,7 @@ home() {
 }
 
 work() {
-  builtin cd "$WORKSPACE/$1"
+  builtin cd "$WORK/$1"
 }
 
 personal() {

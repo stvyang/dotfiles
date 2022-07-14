@@ -4,7 +4,7 @@ ln_flags="-sTf"
 # Folders
 echo "Creating folders if not exist"
 mkdir -pv $HOME/code/personal
-mkdir -pv $HOME/code/workspace
+mkdir -pv $HOME/code/work
 
 # Zsh
 echo "Creating symlinks for zsh configuration"

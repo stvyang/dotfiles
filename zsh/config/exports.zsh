@@ -10,7 +10,7 @@ export GITHUB_EMAIL="stv.yang10@gmail.com"
 
 # Shorthand
 export PERSONAL="$HOME/code/personal"
-export WORKSPACE="$HOME/code/workspace"
+export WORK="$HOME/code/work"
 export DOTFILES="$HOME/code/personal/dotfiles"
 export HAYAI="$HOME/code/personal/hayai"
 export INSUTORU="$HOME/code/personal/insutoru"
