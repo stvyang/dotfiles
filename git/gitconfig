@@ -45,3 +45,4 @@
   rbs   = rebase --skip
   s     = status -s
   t     = tag
+  us    = reset HEAD --
