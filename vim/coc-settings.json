@@ -5,6 +5,5 @@
   "javascript.validate.enable": false,
   "languageserver": {},
   "prettier.eslintIntegration": true,
-  "tsserver.npm": "/usr/bin/npm",
   "rust-analyzer.updates.prompt": false
 }
