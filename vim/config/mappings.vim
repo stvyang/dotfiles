@@ -84,10 +84,10 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Code navigation (GoTo)
-nnoremap <silent> gd :vsplit<CR><Plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
+nmap <silent> gd :vsplit<CR><Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Show documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
