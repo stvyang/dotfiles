@@ -96,7 +96,7 @@ function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
-    call CocAction('doHover')
+    call CocActionAsync('doHover')
   endif
 endfunction
 
@@ -107,7 +107,7 @@ nnoremap <leader>a <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
 
 " Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Format :call CocActionAsync('format')
 
 " Add `:Prettier` command to format using Prettier for current buffer.
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
