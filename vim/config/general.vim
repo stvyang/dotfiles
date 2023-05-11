@@ -22,6 +22,10 @@ set softtabstop=2           " number of spaces per tab when pressing TAB
 set shiftwidth=2            " number of spaces per tab when pressing >>, << or ==
 set expandtab               " tabs are spaces
 
+" Tab config on specific file
+autocmd Filetype js setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd Filetype go setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+
 set cursorline              " highlight current line
 set showmatch               " highlight matching [{()}]
 
