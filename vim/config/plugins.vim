@@ -18,6 +18,7 @@ Plug 'tpope/vim-surround'                           " Text surrounding manipulat
 Plug 'vim-scripts/BufOnly.vim'                      " Delete all buffers except
 Plug 'danro/rename.vim'                             " Rename file of current buffer
 Plug 'tpope/vim-fugitive'                           " Git plugin
+Plug 'airblade/vim-gitgutter'                       " Git gutter
 Plug 'wellle/context.vim'                           " Show context on current line of code
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Intellisense
 
