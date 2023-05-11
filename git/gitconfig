@@ -46,3 +46,6 @@
   s     = status -s
   t     = tag
   us    = reset HEAD --
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
