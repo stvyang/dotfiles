@@ -7,6 +7,7 @@ let configs = [
   \'plugins.vim',
   \'general.vim',
   \'mappings.vim',
+  \'coc.vim',
   \'colors.vim'
 \]
 
