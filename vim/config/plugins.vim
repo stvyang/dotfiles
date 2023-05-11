@@ -92,13 +92,6 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }            " Customize fzf colors to match your color scheme
 
 " --------------------------------------------------
-" ale
-" --------------------------------------------------
-let g:ale_sign_error = '×'
-let g:ale_sign_warning = '!'
-let g:ale_sign_column_always = 1              " Column for ale always shown beside line number
-
-" --------------------------------------------------
 " vim-coc
 " --------------------------------------------------
 let g:coc_global_extensions = [
