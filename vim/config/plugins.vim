@@ -10,6 +10,7 @@ Plug 'christoomey/vim-tmux-navigator'               " Navigate between tmux pane
 Plug 'itchyny/lightline.vim'                        " Beautiful status bar
 Plug 'scrooloose/nerdtree'                          " Display directory tree
 Plug 'scrooloose/nerdcommenter'                     " Commenter
+Plug 'Xuyuanp/nerdtree-git-plugin'                  " Git status flag on tree
 Plug 'mileszs/ack.vim'                              " Search tool
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                             " Fuzzy file finder
