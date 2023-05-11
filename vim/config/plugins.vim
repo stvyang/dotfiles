@@ -6,18 +6,18 @@ call plug#begin('~/.vim/plugged')
 " --------------------------------------------------
 " General
 " --------------------------------------------------
-Plug 'christoomey/vim-tmux-navigator'         " Navigate between tmux panes on vim
-Plug 'itchyny/lightline.vim'                  " Beautiful status bar
-Plug 'scrooloose/nerdtree'                    " Display directory tree
-Plug 'scrooloose/nerdcommenter'               " Commenter
-Plug 'mileszs/ack.vim'                        " Search tool
+Plug 'christoomey/vim-tmux-navigator'               " Navigate between tmux panes on vim
+Plug 'itchyny/lightline.vim'                        " Beautiful status bar
+Plug 'scrooloose/nerdtree'                          " Display directory tree
+Plug 'scrooloose/nerdcommenter'                     " Commenter
+Plug 'mileszs/ack.vim'                              " Search tool
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'                       " Fuzzy file finder
-Plug 'tpope/vim-surround'                     " Text surrounding manipulation
-Plug 'vim-scripts/BufOnly.vim'                " Delete all buffers except
-Plug 'danro/rename.vim'                       " Rename file of current buffer
-Plug 'tpope/vim-fugitive'                     " Git plugin
-Plug 'neoclide/coc.nvim', { 'branch': 'release' } " Intellisense
+Plug 'junegunn/fzf.vim'                             " Fuzzy file finder
+Plug 'tpope/vim-surround'                           " Text surrounding manipulation
+Plug 'vim-scripts/BufOnly.vim'                      " Delete all buffers except
+Plug 'danro/rename.vim'                             " Rename file of current buffer
+Plug 'tpope/vim-fugitive'                           " Git plugin
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Intellisense
 
 " --------------------------------------------------
 " Colorscheme
@@ -32,18 +32,9 @@ Plug 'gosukiwi/vim-atom-dark'                 " A little bit high contrast but I
 " --------------------------------------------------
 " Markdown
 " --------------------------------------------------
-Plug 'godlygeek/tabular'                      " Table support for markdown
-Plug 'gabrielelana/vim-markdown'              " Markdown syntax highlighting
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview markdown on browser
-
-" --------------------------------------------------
-" Language Syntax Highlighting & Indentation
-" --------------------------------------------------
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'elzr/vim-json'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rust-lang/rust.vim'
+Plug 'godlygeek/tabular'                                                " Table support for markdown
+Plug 'gabrielelana/vim-markdown'                                        " Markdown syntax highlighting
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }  " Preview markdown on browser
 
 call plug#end()
 
@@ -119,24 +110,6 @@ let g:coc_global_extensions = [
 \]
 
 " --------------------------------------------------
-" vim-autoclose
-" --------------------------------------------------
-
-" Fix autoclose, we need to press <ESC> twice when autocompletion pops out
-" With this code we don't need to press <ESC> or 'ctrl + [' twice
-let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
-
-" --------------------------------------------------
 " vim-markdown-preview
 " --------------------------------------------------
 let vim_markdown_preview_hotkey='<C-m>'       " Hotkey to open markdown preview
-
-" --------------------------------------------------
-" vim-javascript
-" --------------------------------------------------
-let g:javascript_plugin_jsdoc = 1             " Highlight JSDoc
-
-" --------------------------------------------------
-" vim-jsx
-" --------------------------------------------------
-let g:jsx_ext_required = 1                    " Only enable vim-jsx in .jsx file
