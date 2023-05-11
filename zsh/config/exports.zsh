@@ -1,6 +1,3 @@
-# General
-export PATH="$HOME/.local/bin:$PATH"
-
 # Github
 export GITHUB_USERNAME="stvyang"
 export GITHUB_EMAIL="stv.yang10@gmail.com"
@@ -12,12 +9,12 @@ export DOTFILES="$HOME/code/personal/dotfiles"
 export HAYAI="$HOME/code/personal/hayai"
 export INSUTORU="$HOME/code/personal/insutoru"
 
-# Rust
-export PATH=$HOME/.cargo/bin:$PATH
+# Volta
+export VOLTA_HOME="$HOME/.volta"
 
-# Golang
-export PATH=$PATH:/usr/local/go/bin
+# Go
 export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
 
 # Other
 export EDITOR='nvim'
