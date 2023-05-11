@@ -29,3 +29,6 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # Reload ZSH configuration
 alias reload='source ~/.zshrc'
+
+# Convenient copy of last executed command
+alias copy='fc -ln -1 | tr -d \\n | pbcopy'
