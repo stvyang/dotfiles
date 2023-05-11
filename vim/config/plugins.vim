@@ -17,6 +17,7 @@ Plug 'tpope/vim-surround'                           " Text surrounding manipulat
 Plug 'vim-scripts/BufOnly.vim'                      " Delete all buffers except
 Plug 'danro/rename.vim'                             " Rename file of current buffer
 Plug 'tpope/vim-fugitive'                           " Git plugin
+Plug 'wellle/context.vim'                           " Show context on current line of code
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Intellisense
 
 " --------------------------------------------------
@@ -115,3 +116,10 @@ let g:coc_global_extensions = [
 " vim-markdown-preview
 " --------------------------------------------------
 let vim_markdown_preview_hotkey='<C-m>'       " Hotkey to open markdown preview
+
+" --------------------------------------------------
+" context.vim
+" --------------------------------------------------
+" Just add useless command just to not override H
+let g:context_add_mappings=0
+nnoremap <silent> <expr> zt  context#util#map_H()
