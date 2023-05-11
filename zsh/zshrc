@@ -117,6 +117,14 @@ source $ZSH_CONFIG/config/loads.zsh
 # Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Load lambda-pure
+fpath=( "$HOME/.zfunctions" $fpath )
+autoload -U promptinit; promptinit
+PURE_NODE_ENABLED=0
+PURE_GIT_UP_ARROW='↑'
+PURE_GIT_DOWN_ARROW='↓'
+prompt lambda-pure
+
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
