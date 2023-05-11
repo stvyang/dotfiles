@@ -3,7 +3,17 @@
   "diagnostic.warningSign": "!",
   "eslint.autoFixOnSave": true,
   "javascript.validate.enable": false,
-  "languageserver": {},
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  },
   "prettier.eslintIntegration": true,
-  "rust-analyzer.updates.prompt": false
+  "rust-analyzer.updates.prompt": false,
+  "snippets.ultisnips.pythonPrompt": false
 }
