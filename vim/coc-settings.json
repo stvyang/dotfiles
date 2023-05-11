@@ -1,4 +1,5 @@
 {
+  "coc.preferences.jumpDefinition": "vsplit",
   "diagnostic.errorSign": "×",
   "diagnostic.warningSign": "!",
   "eslint.autoFixOnSave": true,
