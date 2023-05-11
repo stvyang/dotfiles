@@ -13,8 +13,5 @@ antigen bundle stvyang/lambda-pure      # Temporary revert for commit https://gi
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Use zsh-nvm (it's faster!!!) instead of nvm
-antigen bundle lukechilds/zsh-nvm
-
 # Tell Antigen that you're done.
 antigen apply
