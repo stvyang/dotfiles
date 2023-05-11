@@ -13,7 +13,7 @@ export INSUTORU="$HOME/code/personal/insutoru"
 export VOLTA_HOME="$HOME/.volta"
 
 # Go
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 
 # Other
