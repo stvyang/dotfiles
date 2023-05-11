@@ -121,11 +121,6 @@ source $ZSH_CONFIG/config/loads.zsh
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# BCL autocomplete
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-source ~/.bash_completion
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$INSUTORU/plugged/google-pub-sub/google-cloud-sdk/path.zsh.inc" ]; then . "$INSUTORU/plugged/google-pub-sub/google-cloud-sdk/path.zsh.inc"; fi
 
