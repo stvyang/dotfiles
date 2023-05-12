@@ -12,8 +12,12 @@ Plug 'scrooloose/nerdtree'                          " Display directory tree
 Plug 'scrooloose/nerdcommenter'                     " Commenter
 Plug 'Xuyuanp/nerdtree-git-plugin'                  " Git status flag on tree
 Plug 'mileszs/ack.vim'                              " Search tool
-Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'                             " Fuzzy file finder
+" Fuzzy file finder
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' } 
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-live-grep-args.nvim'
+"
 Plug 'tpope/vim-surround'                           " Text surrounding manipulation
 Plug 'vim-scripts/BufOnly.vim'                      " Delete all buffers except
 Plug 'danro/rename.vim'                             " Rename file of current buffer
@@ -73,25 +77,6 @@ let g:NERDSpaceDelims=1
 let g:NERDTreeShowHidden=1
 
 " --------------------------------------------------
-" fzf
-" --------------------------------------------------
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }            " Customize fzf colors to match your color scheme
-
-" --------------------------------------------------
 " vim-coc
 " --------------------------------------------------
 let g:coc_global_extensions = [
@@ -118,3 +103,12 @@ let vim_markdown_preview_hotkey='<C-m>'       " Hotkey to open markdown preview
 " Just add useless command just to not override H
 let g:context_add_mappings=0
 nnoremap <silent> <expr> zt  context#util#map_H()
+
+" --------------------------------------------------
+" telescope
+" --------------------------------------------------
+lua <<EOF
+telescope = require("telescope")
+telescope.load_extension('fzf')
+telescope.load_extension("live_grep_args")
+EOF

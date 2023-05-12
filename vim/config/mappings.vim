@@ -39,7 +39,8 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 map <leader>t :NERDTreeFind<cr>
 
 " Find file
-nnoremap <silent> <C-p> :FZF<CR>
+nnoremap <silent> <C-p> :Telescope find_files<CR>
+nnoremap <silent> <C-f> :lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>
 
 " Resize vertical splits
 nnoremap <silent> <leader>= :vertical resize +5<CR>
@@ -51,9 +52,6 @@ map <leader>b :bp<CR>
 
 " Close all buffers except this
 map <leader>q :BufOnly<CR>
-
-" Find keyword on all files
-nnoremap <leader>f :Ag<space>
 
 " Replace keyword
 nnoremap <leader>r :%s/
