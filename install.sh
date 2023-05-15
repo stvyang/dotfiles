@@ -57,4 +57,9 @@ then
   # Auth
   echo "Creating symlinks for auth configuration"
   ln "$ln_flags" "$ROOT/auth/netrc" "$HOME/.netrc"
+
+  # Config
+  echo "Creating symlinks for config configuration"
+  mkdir -p $HOME/.config/alacritty
+  ln "$ln_flags" "$ROOT/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 fi
