@@ -15,5 +15,6 @@
   },
   "prettier.eslintIntegration": true,
   "rust-analyzer.updates.prompt": false,
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets"
 }
