@@ -1,6 +1,7 @@
 set termguicolors           " enable truecolor support
 set hidden                  " preserve buffers (such as cut, copy, undo history) when switching files
 set wildmenu                " enhanced command-line completion
+set nofixendofline          " No <EOL>
 
 set number                  " show line numbers
 set relativenumber          " show relative line numbers
@@ -16,7 +17,7 @@ set expandtab               " tabs are spaces
 
 " Tab config on specific file
 autocmd Filetype js setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd Filetype go setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+autocmd Filetype go setlocal tabstop=8 softtabstop=8 shiftwidth=8 expandtab
 
 set cursorline              " highlight current line
 set showmatch               " highlight matching [{()}]
