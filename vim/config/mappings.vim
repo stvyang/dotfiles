@@ -41,6 +41,7 @@ map <leader>t :NERDTreeFind<cr>
 " Find file
 nnoremap <silent> <C-p> :Telescope find_files<CR>
 nnoremap <silent> <C-f> :lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>
+nnoremap <silent> <C-b> :Telescope buffers<CR>
 
 " Resize vertical splits
 nnoremap <silent> <leader>= :vertical resize +5<CR>
