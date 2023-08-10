@@ -1,0 +1,32 @@
+name: personal-dev
+root: ~/code/personal
+windows:
+  - freespace:
+      layout: even-horizontal
+      panes:
+        -
+        -
+  - dotfiles:
+      layout: main-vertical
+      panes:
+        - pane1:
+          - dotfiles
+          - nvim
+        - pane2:
+          - dotfiles
+  - insutoru:
+      layout: main-vertical
+      panes:
+        - pane1:
+          - insutoru
+          - nvim
+        - pane2:
+          - insutoru
+  - dotfiles-p:
+      layout: main-vertical
+      panes:
+        - pane1:
+          - dotfiles-p
+          - nvim
+        - pane2:
+          - dotfiles-p

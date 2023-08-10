@@ -1,0 +1,19 @@
+name: pintu-dev
+root: ~/code/work/mono
+windows:
+  - freespace:
+      layout: even-horizontal
+      panes:
+        -
+        -
+  - database:
+      layout: even-horizontal
+      panes:
+        - psql -U postgres
+        -
+  - editor: nvim
+  - mono-terminal:
+      layout: main-vertical
+      panes:
+        -
+        -

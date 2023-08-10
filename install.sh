@@ -59,8 +59,14 @@ then
   echo "Creating symlinks for auth configuration"
   ln "$ln_flags" "$ROOT/auth/netrc" "$HOME/.netrc"
 
-  # Config
-  echo "Creating symlinks for config configuration"
+  # Alacritty
+  echo "Creating symlinks for alacritty configuration"
   mkdir -p $HOME/.config/alacritty
   ln "$ln_flags" "$ROOT/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+
+  # Tmuxinator
+  echo "Creating symlinks for tmuxinator configuration"
+  mkdir -p $HOME/.config/tmuxinator
+  ln "$ln_flags" "$ROOT/config/tmuxinator/personal-dev.yml" "$HOME/.config/tmuxinator/personal-dev.yml"
+  ln "$ln_flags" "$ROOT/config/tmuxinator/pintu-dev.yml" "$HOME/.config/tmuxinator/pintu-dev.yml"
 fi
