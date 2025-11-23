@@ -41,15 +41,24 @@ then
 
   # Vim & Neovim
   echo "Creating symlinks for vim & neovim configuration"
-  VIM_DIR=$HOME/.vim
   NEOVIM_DIR=$HOME/.config/nvim
-  mkdir -p $VIM_DIR
-  ln "$ln_flags" "$VIM_DIR" "$NEOVIM_DIR"
-  ln "$ln_flags" "$ROOT/vim/config" "$VIM_DIR/config"
-  ln "$ln_flags" "$ROOT/vim/snippets" "$VIM_DIR/snippets"
-  ln "$ln_flags" "$ROOT/vim/vimrc" "$NEOVIM_DIR/init.vim"
-  ln "$ln_flags" "$ROOT/vim/vimrc" "$HOME/.vimrc"
-  ln "$ln_flags" "$ROOT/vim/coc-settings.json" "$NEOVIM_DIR/coc-settings.json"
+  # ln "$ln_flags" "$VIM_DIR" "$NEOVIM_DIR"
+  # ln "$ln_flags" "$ROOT/vim/config" "$VIM_DIR/config"
+  # ln "$ln_flags" "$ROOT/vim/snippets" "$VIM_DIR/snippets"
+  # ln "$ln_flags" "$ROOT/vim/vimrc" "$NEOVIM_DIR/init.vim"
+  # ln "$ln_flags" "$ROOT/vim/vimrc" "$HOME/.vimrc"
+
+  # LazyVim
+  echo "Creating symlinks for lazyvim configuration"
+  mkdir -p $NEOVIM_DIR/lua/config
+  mkdir -p $NEOVIM_DIR/lua/plugins
+  for file in $ROOT/lazyvim/lua/config/*; do
+    ln "$ln_flags" "$file" $NEOVIM_DIR/lua/config/
+  done
+  for file in $ROOT/lazyvim/lua/plugins/*; do
+    ln "$ln_flags" "$file" $NEOVIM_DIR/lua/plugins/
+  done
+  ln "$ln_flags" "$ROOT/lazyvim/init.lua" "$NEOVIM_DIR/init.lua"
 
   # IdeaVim
   echo "Creating symlinks for ideavim configuration"
