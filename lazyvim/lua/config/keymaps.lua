@@ -2,6 +2,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Use native clipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- Map
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
@@ -17,16 +20,6 @@ map("n", "^", "<nop>", opts)
 -- Insert new line below/above without entering insert mode
 map("n", "<leader>j", "o<Esc>", opts)
 map("n", "<leader>k", "O<Esc>", opts)
-
------------------------------------------------------------
--- Clipboard (Ctrl+C/V/X)
--- Note: 'vim.opt.clipboard = "unnamedplus"' is often cleaner,
--- but this replicates your exact previous behavior.
------------------------------------------------------------
--- map("v", "<C-c>", '"+y', opts)       -- Copy to system clipboard
--- map("v", "<C-x>", '"+d', opts)       -- Cut to system clipboard
--- map("v", "<C-v>", 'c<ESC>"+p', opts) -- Paste from system clipboard
--- map("i", "<C-v>", '<C-r><C-o>+', opts) -- Paste in insert mode
 
 -----------------------------------------------------------
 -- System Operations

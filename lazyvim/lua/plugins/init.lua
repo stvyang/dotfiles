@@ -1,4 +1,3 @@
--- lua/plugins/init.lua
 return {
   ---------------------------------------------------------------------------
   -- Mason: external tooling manager (LSP servers, formatters, linters, etc.)
@@ -40,7 +39,7 @@ return {
       end
 
       -- Simple on_attach with a few keymaps
-      local function on_attach(client, bufnr)
+      local function on_attach(_client, bufnr)
         local bufmap = function(mode, lhs, rhs, desc)
           vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc, silent = true })
         end
@@ -52,52 +51,21 @@ return {
         bufmap("n", "K", vim.lsp.buf.hover, "Hover")
         bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
         bufmap("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
-        bufmap("n", "[d", vim.diagnostic.goto_prev, "Prev Diagnostic")
-        bufmap("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
-        bufmap("n", "<leader>f", function()
-          vim.lsp.buf.format({ async = true })
-        end, "Format buffer")
+        bufmap("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, "Prev Diagnostic")
+        bufmap("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next Diagnostic")
+
+        -- bufmap("n", "<leader>f", function()
+        --   vim.lsp.buf.format({ async = true })
+        -- end, "Format buffer")
+
       end
 
-      -- Define configs for each server
-      local servers = { "gopls", "pyright", "ts_ls", "lua_ls", "rust_analyzer" }
-      for _, server in ipairs(servers) do
-        vim.lsp.config[server] = {
+      require("lspconfig").util.default_config = vim.tbl_extend("force",
+        require("lspconfig").util.default_config, {
           capabilities = capabilities,
           on_attach = on_attach,
         }
-      end
-
-      -- Per-language tweaks (optional)
-      vim.lsp.config.lua_ls.settings = {
-        Lua = {
-          diagnostics = { globals = { "vim" } },
-        },
-      }
-
-      -- Auto-start correct LSP based on filetype
-      vim.api.nvim_create_autocmd("BufReadPost", {
-        callback = function(args)
-          local bufnr = args.buf
-          local ft = vim.bo[bufnr].filetype
-
-          local map = {
-            go = "gopls",
-            python = "pyright",
-            lua = "lua_ls",
-            javascript = "ts_ls",
-            typescript = "ts_ls",
-            typescriptreact = "ts_ls",
-            tsx = "ts_ls",
-            rust = "rust_analyzer",
-          }
-
-          local server = map[ft]
-          if server and vim.lsp.config[server] then
-            vim.lsp.start(vim.lsp.config[server], { bufnr = bufnr })
-          end
-        end,
-      })
+      )
     end,
   },
 
@@ -170,6 +138,10 @@ return {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
     dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+    },
     config = function()
       require("telescope").setup({})
     end,
@@ -184,6 +156,18 @@ return {
     config = function()
       require("which-key").setup({})
     end,
+  },
+
+  {
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
   },
 
   ---------------------------------------------------------------------------
@@ -219,7 +203,7 @@ return {
   ---------------------------------------------------------------------------
   {
     "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+    event = "BufEnter",
     keys = {
       { "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file tree" },
       { "<leader>t", "<cmd>NvimTreeFindFile<CR>", desc = "Locate file in tree" },
@@ -236,6 +220,16 @@ return {
         git = {
           enable = true,
         },
+      })
+
+      -- Automatically open nvim-tree when Neovim starts without arguments
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+          -- Only open if no arguments were passed
+          -- if vim.fn.argc() == 0 and vim.fn.bufnr('$') == 1 then
+            vim.cmd("NvimTreeOpen") -- Use NvimTreeOpen for the initial start
+          -- end
+        end
       })
     end,
   },
@@ -284,4 +278,24 @@ return {
       end
     end,
   },
+
+  {
+    "navarasu/onedark.nvim",
+    priority = 1000,
+    config = function()
+      require('onedark').setup {
+        style = 'warmer'
+      }
+      require('onedark').load()
+    end,
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("gitsigns").setup()
+    end,
+  },
+
 }
