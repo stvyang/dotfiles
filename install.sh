@@ -61,8 +61,8 @@ then
   ln "$ln_flags" "$ROOT/lazyvim/init.lua" "$NEOVIM_DIR/init.lua"
 
   # IdeaVim
-  echo "Creating symlinks for ideavim configuration"
-  ln "$ln_flags" "$ROOT/vim/ideavimrc" "$HOME/.ideavimrc"
+  # echo "Creating symlinks for ideavim configuration"
+  # ln "$ln_flags" "$ROOT/vim/ideavimrc" "$HOME/.ideavimrc"
 
   # Auth
   echo "Creating symlinks for auth configuration"

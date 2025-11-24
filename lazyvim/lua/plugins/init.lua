@@ -19,9 +19,8 @@ return {
     },
     config = function()
       require("mason-lspconfig").setup({
-        -- adjust this list to your needs
-        ensure_installed = { "gopls", "pyright", "rust_analyzer", "tsserver", "lua_ls" },
-        automatic_enable = true,
+        ensure_installed = { "gopls", "pyright", "rust_analyzer", "ts_ls", "lua_ls" },
+        automatic_installation = true,
       })
     end,
   },
@@ -33,21 +32,50 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-      -- nice defaults for capabilities (completion, etc.)
+      -- Capabilities (for nvim-cmp)
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       local ok_cmp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
       if ok_cmp then
         capabilities = cmp_lsp.default_capabilities(capabilities)
       end
 
-      local servers = { "gopls", "pyright", "tsserver", "lua_ls" }
+      -- Simple on_attach with a few keymaps
+      local function on_attach(client, bufnr)
+        local bufmap = function(mode, lhs, rhs, desc)
+          vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc, silent = true })
+        end
 
+        bufmap("n", "gd", vim.lsp.buf.definition, "Goto Definition")
+        bufmap("n", "gD", vim.lsp.buf.declaration, "Goto Declaration")
+        bufmap("n", "gi", vim.lsp.buf.implementation, "Goto Implementation")
+        bufmap("n", "gr", vim.lsp.buf.references, "Goto References")
+        bufmap("n", "K", vim.lsp.buf.hover, "Hover")
+        bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
+        bufmap("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
+        bufmap("n", "[d", vim.diagnostic.goto_prev, "Prev Diagnostic")
+        bufmap("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
+        bufmap("n", "<leader>f", function()
+          vim.lsp.buf.format({ async = true })
+        end, "Format buffer")
+      end
+
+      -- Define configs for each server
+      local servers = { "gopls", "pyright", "ts_ls", "lua_ls", "rust_analyzer" }
       for _, server in ipairs(servers) do
         vim.lsp.config[server] = {
           capabilities = capabilities,
+          on_attach = on_attach,
         }
       end
 
+      -- Per-language tweaks (optional)
+      vim.lsp.config.lua_ls.settings = {
+        Lua = {
+          diagnostics = { globals = { "vim" } },
+        },
+      }
+
+      -- Auto-start correct LSP based on filetype
       vim.api.nvim_create_autocmd("BufReadPost", {
         callback = function(args)
           local bufnr = args.buf
@@ -57,9 +85,11 @@ return {
             go = "gopls",
             python = "pyright",
             lua = "lua_ls",
-            javascript = "tsserver",
-            typescript = "tsserver",
-            tsx = "tsserver",
+            javascript = "ts_ls",
+            typescript = "ts_ls",
+            typescriptreact = "ts_ls",
+            tsx = "ts_ls",
+            rust = "rust_analyzer",
           }
 
           local server = map[ft]
@@ -90,7 +120,6 @@ return {
       local cmp = require("cmp")
       local luasnip = require("luasnip")
 
-      -- load vscode-style snippets from friendly-snippets
       require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
@@ -184,12 +213,17 @@ return {
     end,
   },
 
+
   ---------------------------------------------------------------------------
   -- nvim-tree: file explorer
   ---------------------------------------------------------------------------
   {
     "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFindFile", "NvimTreeOpen" },
+    cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+    keys = {
+      { "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file tree" },
+      { "<leader>t", "<cmd>NvimTreeFindFile<CR>", desc = "Locate file in tree" },
+    },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("nvim-tree").setup({
@@ -203,10 +237,25 @@ return {
           enable = true,
         },
       })
-
-      -- Basic keymap (change as you like)
-      vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
     end,
+  },
+
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
   },
 
   ---------------------------------------------------------------------------
