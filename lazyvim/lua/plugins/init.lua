@@ -122,6 +122,7 @@ return {
           end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
+          { name = "copilot" },
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "path" },
@@ -356,6 +357,39 @@ return {
         inactive_winbar = {},
         extensions = {}
       }
+    end,
+  },
+
+  ---------------------------------------------------------------------------
+  -- GitHub Copilot
+  ---------------------------------------------------------------------------
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    build = ":Copilot auth",
+    dependencies = { "copilot-cmp" }, -- Ensure copilot-cmp is loaded first
+
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = "<Tab>", -- Matches your existing Tab mapping below!
+          next = "<M-]>",
+          prev = "<M-[>",
+        },
+      },
+      panel = { enabled = false },
+      filetypes = { ["*"] = true },
+    },
+  },
+
+  -- Copilot source for nvim-cmp
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
     end,
   },
 
