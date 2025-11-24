@@ -54,10 +54,6 @@ return {
         bufmap("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, "Prev Diagnostic")
         bufmap("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next Diagnostic")
 
-        -- bufmap("n", "<leader>f", function()
-        --   vim.lsp.buf.format({ async = true })
-        -- end, "Format buffer")
-
       end
 
       require("lspconfig").util.default_config = vim.tbl_extend("force",
@@ -143,9 +139,6 @@ return {
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
       { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
     },
-    config = function()
-      require("telescope").setup({})
-    end,
   },
 
   ---------------------------------------------------------------------------
@@ -154,9 +147,6 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    config = function()
-      require("which-key").setup({})
-    end,
   },
 
   {
@@ -226,10 +216,7 @@ return {
       -- Automatically open nvim-tree when Neovim starts without arguments
       vim.api.nvim_create_autocmd("VimEnter", {
         callback = function()
-          -- Only open if no arguments were passed
-          -- if vim.fn.argc() == 0 and vim.fn.bufnr('$') == 1 then
-            vim.cmd("NvimTreeOpen") -- Use NvimTreeOpen for the initial start
-          -- end
+          vim.cmd("NvimTreeOpen") -- Use NvimTreeOpen for the initial start
         end
       })
     end,
@@ -305,57 +292,8 @@ return {
     config = function()
       require('lualine').setup {
         options = {
-          icons_enabled = true,
-          theme = 'auto',
-          component_separators = { left = '', right = ''},
-          section_separators = { left = '', right = ''},
-          disabled_filetypes = {
-            statusline = {},
-            winbar = {},
-          },
-          ignore_focus = {},
-          always_divide_middle = true,
-          always_show_tabline = true,
-          globalstatus = false,
-          refresh = {
-            statusline = 1000,
-            tabline = 1000,
-            winbar = 1000,
-            refresh_time = 16, -- ~60fps
-            events = {
-              'WinEnter',
-              'BufEnter',
-              'BufWritePost',
-              'SessionLoadPost',
-              'FileChangedShellPost',
-              'VimResized',
-              'Filetype',
-              'CursorMoved',
-              'CursorMovedI',
-              'ModeChanged',
-            },
-          }
-        },
-        sections = {
-          lualine_a = {'mode'},
-          lualine_b = {'branch', 'diff', 'diagnostics'},
-          lualine_c = {'filename'},
-          lualine_x = {'encoding', 'fileformat', 'filetype'},
-          lualine_y = {'progress'},
-          lualine_z = {'location'}
-        },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = {'filename'},
-          lualine_x = {'location'},
-          lualine_y = {},
-          lualine_z = {}
-        },
-        tabline = {},
-        winbar = {},
-        inactive_winbar = {},
-        extensions = {}
+          refresh = { refresh_time = 16 }, -- ~60fps (only non-default setting)
+        }
       }
     end,
   },

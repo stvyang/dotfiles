@@ -2,9 +2,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Use native clipboard
-vim.opt.clipboard = "unnamedplus"
-
 -- Map
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }

@@ -3,6 +3,7 @@ local opt = vim.opt
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
+opt.clipboard = "unnamedplus" -- Use native clipboard
 opt.termguicolors = true      -- Enable truecolor support
 opt.hidden = true             -- Preserve buffers when switching
 opt.wildmenu = true           -- Enhanced command-line completion
@@ -49,18 +50,6 @@ opt.smartcase = true          -- If search contains uppercase, it's case sensiti
 
 -- Create a group to prevent duplication if you reload config
 local vimrc_group = vim.api.nvim_create_augroup("vimrc_autocmds", { clear = true })
-
--- Javascript: (Matches your global settings, but kept for completeness)
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-  group = vimrc_group,
-  callback = function()
-    vim.opt_local.tabstop = 2
-    vim.opt_local.softtabstop = 2
-    vim.opt_local.shiftwidth = 2
-    vim.opt_local.expandtab = true
-  end,
-})
 
 -- Golang:
 -- Note: Standard Go formatting usually requires Tabs (noexpandtab). 
