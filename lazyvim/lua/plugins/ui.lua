@@ -9,7 +9,48 @@ return {
     keys = {
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
       { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+      { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+      { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
     },
+    config = function()
+      require("telescope").setup({
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-u>"] = false,
+              ["<C-d>"] = false,
+            },
+          },
+        },
+        pickers = {
+          lsp_references = {
+            theme = "dropdown",
+            show_line = false,
+          },
+          lsp_definitions = {
+            theme = "dropdown",
+            show_line = false,
+          },
+          lsp_implementations = {
+            theme = "dropdown",
+            show_line = false,
+          },
+          lsp_type_definitions = {
+            theme = "dropdown",
+            show_line = false,
+          },
+          lsp_document_symbols = {
+            theme = "dropdown",
+          },
+          lsp_workspace_symbols = {
+            theme = "dropdown",
+          },
+          diagnostics = {
+            theme = "dropdown",
+          },
+        },
+      })
+    end,
   },
 
   ---------------------------------------------------------------------------

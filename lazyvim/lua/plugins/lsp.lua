@@ -72,19 +72,63 @@ return {
             vim.keymap.set(mode, lhs, rhs, { buffer = ev.buf, desc = desc, silent = true })
           end
 
-          -- Core LSP keymaps (most commonly supported)
-          bufmap("n", "gd", vim.lsp.buf.definition, "Goto Definition")
-          bufmap("n", "gi", vim.lsp.buf.implementation, "Goto Implementation")
-          bufmap("n", "gr", vim.lsp.buf.references, "Goto References")
+          -- Helper function to safely call telescope LSP functions
+          local safe_telescope_call = function(func, fallback_func, error_msg)
+            return function()
+              local ok, err = pcall(func)
+              if not ok then
+                if fallback_func then
+                  fallback_func()
+                else
+                  vim.notify(error_msg or "LSP function not available", vim.log.levels.WARN)
+                end
+              end
+            end
+          end
+
+          -- Check if telescope is available and get builtin functions
+          local telescope_available, telescope_builtin = pcall(require, "telescope.builtin")
+
+          if telescope_available then
+            -- Core navigation functions (most commonly supported)
+            bufmap("n", "gd", function() telescope_builtin.lsp_definitions() end, "Goto Definition")
+            bufmap("n", "gr", function() telescope_builtin.lsp_references() end, "Goto References")
+
+            -- Implementation with fallback (not all servers/symbols support this)
+            bufmap("n", "gi", safe_telescope_call(
+              telescope_builtin.lsp_implementations,
+              vim.lsp.buf.implementation,
+              "No implementations found"
+            ), "Goto Implementation")
+
+            -- Type definitions with fallback (Go doesn't typically use this much)
+            bufmap("n", "gt", safe_telescope_call(
+              telescope_builtin.lsp_type_definitions,
+              nil,
+              "Type definitions not supported or not found"
+            ), "Goto Type Definition")
+
+            -- Symbol browsing
+            bufmap("n", "<leader>ds", function() telescope_builtin.lsp_document_symbols() end, "Document Symbols")
+            bufmap("n", "<leader>ws", function() telescope_builtin.lsp_workspace_symbols() end, "Workspace Symbols")
+
+            -- Diagnostics (telescope has this)
+            bufmap("n", "<leader>e", function() telescope_builtin.diagnostics() end, "Show Diagnostics")
+          else
+            -- Fallback to regular LSP functions if telescope not available
+            bufmap("n", "gd", vim.lsp.buf.definition, "Goto Definition")
+            bufmap("n", "gi", vim.lsp.buf.implementation, "Goto Implementation")
+            bufmap("n", "gr", vim.lsp.buf.references, "Goto References")
+          end
+
+          -- These always use standard LSP (no telescope equivalent)
           bufmap("n", "K", vim.lsp.buf.hover, "Hover")
           bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
           bufmap("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
 
-          -- Diagnostics are always available
+          -- Diagnostics navigation
           bufmap("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, "Prev Diagnostic")
           bufmap("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next Diagnostic")
-
-          -- Note: Removed gD (declaration) as it's not supported by most servers like gopls
         end,
       })
     end,
