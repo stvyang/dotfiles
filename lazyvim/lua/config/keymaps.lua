@@ -7,12 +7,12 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Move to start/end of line (H/L)
-map("n", "H", "^", opts)
-map("n", "L", "$", opts)
+map({"n", "v"}, "H", "^", opts)
+map({"n", "v"}, "L", "$", opts)
 
 -- Disable default start/end line keys
-map("n", "$", "<nop>", opts)
-map("n", "^", "<nop>", opts)
+map({"n", "v"}, "$", "<nop>", opts)
+map({"n", "v"}, "^", "<nop>", opts)
 
 -- Insert new line below/above without entering insert mode
 map("n", "<leader>j", "o<Esc>", opts)
