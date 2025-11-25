@@ -30,6 +30,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "mason-org/mason-lspconfig.nvim" },
     config = function()
       -- Capabilities (for nvim-cmp)
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -38,30 +39,54 @@ return {
         capabilities = cmp_lsp.default_capabilities(capabilities)
       end
 
-      -- Simple on_attach with a few keymaps
-      local function on_attach(_client, bufnr)
-        local bufmap = function(mode, lhs, rhs, desc)
-          vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc, silent = true })
-        end
+      -- Setup basic server configurations using modern vim.lsp.config API
+      local servers = {
+        gopls = {},
+        pyright = {},
+        rust_analyzer = {},
+        ts_ls = {},
+        lua_ls = {
+          settings = {
+            Lua = {
+              runtime = { version = "LuaJIT" },
+              diagnostics = { globals = { "vim" } },
+              workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+              telemetry = { enable = false },
+            },
+          },
+        },
+      }
 
-        bufmap("n", "gd", vim.lsp.buf.definition, "Goto Definition")
-        bufmap("n", "gD", vim.lsp.buf.declaration, "Goto Declaration")
-        bufmap("n", "gi", vim.lsp.buf.implementation, "Goto Implementation")
-        bufmap("n", "gr", vim.lsp.buf.references, "Goto References")
-        bufmap("n", "K", vim.lsp.buf.hover, "Hover")
-        bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
-        bufmap("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
-        bufmap("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, "Prev Diagnostic")
-        bufmap("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next Diagnostic")
-
+      for server, config in pairs(servers) do
+        config.capabilities = capabilities
+        vim.lsp.config[server] = config
       end
 
-      require("lspconfig").util.default_config = vim.tbl_extend("force",
-        require("lspconfig").util.default_config, {
-          capabilities = capabilities,
-          on_attach = on_attach,
-        }
-      )
+      -- LspAttach autocommand for keymaps (more reliable than on_attach)
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+        callback = function(ev)
+          print("LspAttach triggered for buffer:", ev.buf) -- Debug message
+
+          local bufmap = function(mode, lhs, rhs, desc)
+            vim.keymap.set(mode, lhs, rhs, { buffer = ev.buf, desc = desc, silent = true })
+          end
+
+          -- Core LSP keymaps (most commonly supported)
+          bufmap("n", "gd", vim.lsp.buf.definition, "Goto Definition")
+          bufmap("n", "gi", vim.lsp.buf.implementation, "Goto Implementation")
+          bufmap("n", "gr", vim.lsp.buf.references, "Goto References")
+          bufmap("n", "K", vim.lsp.buf.hover, "Hover")
+          bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
+          bufmap("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
+
+          -- Diagnostics are always available
+          bufmap("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, "Prev Diagnostic")
+          bufmap("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next Diagnostic")
+
+          -- Note: Removed gD (declaration) as it's not supported by most servers like gopls
+        end,
+      })
     end,
   },
 
