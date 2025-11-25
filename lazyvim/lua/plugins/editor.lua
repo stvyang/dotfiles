@@ -64,4 +64,32 @@ return {
       }
     end,
   },
+
+  ---------------------------------------------------------------------------
+  -- OpenCode integration
+  ---------------------------------------------------------------------------
+  {
+    "NickvanDyke/opencode.nvim",
+    config = function()
+      -- Configuration via global variable
+      vim.g.opencode_opts = {
+        -- Will use tmux if inside tmux session, otherwise needs manual opencode instance
+      }
+
+      -- Required for auto-reloading files edited by opencode
+      vim.o.autoread = true
+
+      -- Recommended keymaps
+      vim.keymap.set({ "n", "x" }, "<C-a>", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode" })
+      vim.keymap.set({ "n", "x" }, "<C-x>", function() require("opencode").select() end, { desc = "Execute opencode action…" })
+      vim.keymap.set({ "n", "x" }, "ga", function() require("opencode").prompt("@this") end, { desc = "Add to opencode" })
+      vim.keymap.set({ "n", "t" }, "<C-.>", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
+      vim.keymap.set("n", "<S-C-u>", function() require("opencode").command("session.half.page.up") end, { desc = "opencode half page up" })
+      vim.keymap.set("n", "<S-C-d>", function() require("opencode").command("session.half.page.down") end, { desc = "opencode half page down" })
+
+      -- Restore original increment/decrement since we use <C-a> and <C-x>
+      vim.keymap.set('n', '+', '<C-a>', { desc = 'Increment', noremap = true })
+      vim.keymap.set('n', '-', '<C-x>', { desc = 'Decrement', noremap = true })
+    end,
+  },
 }
