@@ -43,7 +43,7 @@ php_use() {
 #===================
 # AI Code - Split current tmux window into nvim + opencode panes
 #===================
-ai-dev() {
+ai-code() {
   if [ -z "$TMUX" ]; then
     echo "Error: Not in a tmux session. Use 'tmuxinator start ai-dev' instead."
     return 1
