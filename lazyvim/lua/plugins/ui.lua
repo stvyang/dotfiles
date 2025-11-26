@@ -89,6 +89,7 @@ return {
       vim.api.nvim_create_autocmd("VimEnter", {
         callback = function()
           vim.cmd("NvimTreeOpen") -- Use NvimTreeOpen for the initial start
+          vim.cmd("wincmd l") -- Move focus to the right window (editor)
         end
       })
     end,
