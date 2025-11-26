@@ -39,8 +39,8 @@ opt.splitright = true         -- Horizontal split pane to right
 -----------------------------------------------------------
 -- Search
 -----------------------------------------------------------
-opt.hlsearch = true           -- Highlight matches search
-opt.incsearch = true          -- Show where the search pattern matches as we typed
+opt.hlsearch = true           -- Highlight search matches
+opt.incsearch = true          -- Show where the search pattern matches as you type
 opt.ignorecase = true         -- Case insensitive search
 opt.smartcase = true          -- If search contains uppercase, it's case sensitive
 
@@ -61,6 +61,6 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.tabstop = 8
     vim.opt_local.softtabstop = 8
     vim.opt_local.shiftwidth = 8
-    vim.opt_local.expandtab = true
+    vim.opt_local.expandtab = false
   end,
 })
