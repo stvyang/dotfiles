@@ -43,14 +43,14 @@ then
   echo "Creating symlinks for neovim configuration"
   NEOVIM_DIR=$HOME/.config/nvim
   mkdir -p $NEOVIM_DIR/lua/config
-  for file in $ROOT/lazyvim/lua/config/*; do
+  for file in $ROOT/nvim/lua/config/*; do
     ln "$ln_flags" "$file" $NEOVIM_DIR/lua/config/
   done
   mkdir -p $NEOVIM_DIR/lua/plugins
-  for file in $ROOT/lazyvim/lua/plugins/*; do
+  for file in $ROOT/nvim/lua/plugins/*; do
     ln "$ln_flags" "$file" $NEOVIM_DIR/lua/plugins/
   done
-  ln "$ln_flags" "$ROOT/lazyvim/init.lua" "$NEOVIM_DIR/init.lua"
+  ln "$ln_flags" "$ROOT/nvim/init.lua" "$NEOVIM_DIR/init.lua"
 
   # IdeaVim
   echo "Creating symlinks for ideavim configuration"
