@@ -39,3 +39,25 @@ php_use() {
   sudo update-alternatives --set php-config "/usr/bin/php-config$1"
   sudo update-alternatives --set phpize "/usr/bin/phpize$1"
 }
+
+#===================
+# AI Code - Split current tmux window into nvim + opencode panes
+#===================
+ai-dev() {
+  if [ -z "$TMUX" ]; then
+    echo "Error: Not in a tmux session. Use 'tmuxinator start ai-dev' instead."
+    return 1
+  fi
+
+  # First, start nvim in the current pane (left, will be 80%)
+  tmux send-keys "nvim" C-m
+
+  # Split window vertically creating right pane at 20% width
+  tmux split-window -h -p 30 -c "#{pane_current_path}"
+
+  # Now in the right pane (newly created), send opencode command
+  tmux send-keys "opencode" C-m
+
+  # Return focus to left pane (nvim)
+  tmux select-pane -t 0
+}
